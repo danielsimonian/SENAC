@@ -22,13 +22,20 @@ a:visited {
 }
 
 body {
-    background-color: var(--cinza);
+    background-image: url(/img/body_bg.jpg);
+    background-color: var(--pretin);
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
+
 
 header {
     background-color: white;
     margin: auto;
-    box-shadow: 0 10px 10px 5px #aaaaaa;
     max-width: 900px;
     min-width: 320px;
 }
@@ -70,7 +77,6 @@ main {
     margin: auto;
     max-width: 900px;
     min-width: 320px;
-    box-shadow: 0 10px 10px 5px #aaaaaa;
     text-align: center;
 }
 
@@ -78,10 +84,8 @@ main {
     width: 100%;
 }
 
-/* h1 */
-h1 {
+.lancamentos {
     padding: 10px;
-    font-size: 20px;
 }
 
 /* card de fotografia */
@@ -111,6 +115,7 @@ h1 {
 .galeria-lancamentos > article > a > h1 {
     display: inline-block;
     font-size: 100%;
+    padding: 10px;
 }
 
 /* Nome do artista */
@@ -151,6 +156,39 @@ h1 {
 .galeria-artistas > article > a img:hover {
     opacity: 0.5;
 }
+
+/*------Página dos artistas-------*/
+
+.nome-artista {
+    padding: 10px;
+}
+
+#paralax-image {
+    background-image: url(/img/andre.jpg);
+    height: 300px;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.paralax-text {
+    text-align: justify;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 251, 251, 0.5);
+    color: white;
+    padding: 20px;
+}
+
+.paralax-text2 {
+    text-align: justify;
+    width: 300px;
+    background-color: rgba(255, 251, 251, 0.5);
+    color: black;
+    padding: 20px;
+}
+
+
 
 /* ------ FORMS 02 --------*/
 
@@ -208,13 +246,14 @@ input[type=submit]:hover {
     clear: both;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other 
 @media screen and (max-width: 600px) {
 .col-25, .col-75, input[type=submit] {
     width: 100%;
     margin-top: 0;
     }
 }
+*/
 
 /* ------------- FORMS 01 
 
