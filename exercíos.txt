@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pr-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta viewport>
+	<title>Lasanha da Tia Bia</title>
+</head>
+
+<body>
+	<h1>Lasanha da Tia Bia</h1>
+	<img scr="/Lasanha da Tia Bia/assests/lasanha" alt="Foto da lasanha">
+	<h2>Tamanhos</h2>
+	<ul>
+		<li>Pequeno</li>
+		<li>Médio</li>
+		<li>Grande</li>
+	</ul>
+	<h2>Sabores</h2>
+	<ul>
+		<li>Carne</li>
+		<li>Calabreza</li>
+		<li>Frango com Catupiry<li>
+	</ul>
+<hr>
+<p><strong>Lorem ipsum</strong> hLBHLhlashflhaslfhlsahflHllflaslflasflasfalfhaofgalsal</p>
+<p><strong>Lorem ipsum</strong> HAuhauAuAhUaHuahuhudhSIFskfjasfjbafafasvfsalvfLJv</p>
+	
+
+</body>
+
+
+
+-------------------
+
+02. Exercício História do HTML
+
+01. C
+02. B
+03. D
+04. A
+05. C
+06. B 
+07. D
+08. C
+09. A
+10. D
+
+
+03. Exercícios HTML e CSS
+
+01. C
+02. B
+03. A
+04. D
+05. B
+06. B
+07. A
+08. C
+09. D
+10. B
+
+04.HTML
+
+01. D
+02. A
+03. B
+04. D
+05. A
+06. C
+07. A
+08. D
+09. A
+10. C
+
+05 - Caracteres, parágrafos e quebras de linha:
+1-A
+2-B
+3-C
+4-C
+5-A
+6-D
+7-C
+8-D
+9-B
+10-A
+ 
+ 
+06 - Imagens e Favicon:
+1-B
+2-C
+3-D
+4-A
+5-D
+6-A
+7-C
+8-D
+9-A
+10-C
+ 
+ 
+07 - Hierarquia de títulos:
+1-A
+2-D
+3-A
+4-A
+5-D
+6-B
+7-A
+8-A
+9-C
+10-C
+ 
+ 
+08 - Formatação de Textos:
+1-B
+2-D
+3-C
+4-C
+5-A
+6-D
+7-B
+8-D
+9-C
+10-A
+ 
+ 
+09 - Listas HTML:
+1-C
+2-C
+3-A
+4-D
+5-C
+6-D
+7-B
+8-C
+9-A
+10-B
+ 
+ 
+10 - Ligações em toda parte:
+1-A
+2-D
+3-C
+4-D
+5-C
+6-D
+7-A
+8-B
+9-C
+10-B
+
+12 - Trabalhando com estilos:
+ 
+1-C
+2-A
+3-B
+4-D
+5-B
+6-A
+7-D
+8-C
+9-B
+10-C

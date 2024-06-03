@@ -1,0 +1,53 @@
+main > div {
+    text-align: center;
+    background-color: blue;
+    border: solid red 1px;
+    border-width: 40px;
+    outline: solid blue 10px;
+    padding: 10px;
+    margin: 30px 30px 30px 10px;
+
+    display: inline-block;
+}
+
+main > div {
+    text-align: center;
+    background-color: blue;
+    border: solid red 1px;
+    border-width: 40px;
+    outline: solid blue 10px;
+    padding: 10px;
+    margin: 30px 30px 30px 10px;
+
+    display: inline-block;
+}
+
+/* box-level (block) utilizam a linha toda por padrão:
+    TUDO ANTES ERA DIV (HTML 4 PARA 5, ISSO MUDOU!)
+    - div
+    - h1 ao h6
+    - p
+    - main
+    - header
+    - nav
+    - article
+    - aside
+    - footer
+    - form
+    - video
+*/
+
+/* inline-level - ocupa o espço que precisa:
+    - span
+    - a
+    - code
+    - small
+    - em
+    - sup
+    - sub
+    - label
+    - button
+    - input
+    - select
+*/
+
