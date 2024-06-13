@@ -1,0 +1,139 @@
+* {
+    color: white;
+}
+
+main {
+    text-align: center;
+    margin: 100px 100px;
+}
+
+h1, p {
+    background-color: black;
+}
+
+/* PHONE */ 
+@media screen and (min-width:10px) and (max-width:768px) {
+    body {
+        background-image: url(img/phone-back.jpg);
+    }
+    
+    .pc {
+        display: none;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .tv {
+        display: none;
+    }
+
+    .print {
+        display: none;
+    }
+}
+
+/* TABLET */
+@media screen and (min-width:768px) and (max-width:992px) {
+    body {
+        background-image: url(img/tablet-back.jpg);
+    }
+    
+    .phone {
+        display: none;
+    }
+
+    .pc {
+        display: none;
+    }
+
+    .tv {
+        display: none;
+    }
+
+    .print {
+        display: none;
+    }
+}
+
+/* PC */
+@media screen and (min-width:992px) and (max-width:1200px) {
+    body {
+        background-image: url(img/pc-back.jpg);
+    }
+    
+    .phone {
+        display: none;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .tv {
+        display: none;
+    }
+
+    .print {
+        display: none;
+    }
+}
+
+/* TV */
+@media screen and (min-width:1200px) and (max-width:8000px) {
+    body {
+        background-image: url(img/tv-back.jpg);
+    }
+
+    main {
+        width: 800px;
+        height: 820px;
+        margin: 100px auto;
+        background-color: rgba(255, 255, 255, 0.192);
+    }
+   
+    .phone {
+        display: none;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .pc {
+        display: none;
+    }
+
+    .print {
+        display: none;
+    }
+}
+
+/* PRINT */
+@media print {
+    #print {
+        width: 100%;
+    }
+    
+    main::after{
+        content: 'Essa impressão foi feita através do site de Daniel Simonian';
+        text-decoration: overline;
+    }
+
+    .phone {
+        display: none;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .pc {
+        display: none;
+    }
+
+    .tv {
+        display: none;
+    }
+}
