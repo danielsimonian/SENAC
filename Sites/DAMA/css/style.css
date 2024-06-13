@@ -22,11 +22,6 @@ body {
     background-color: var(--azul);
 }
 
-.container-menu {
-    border: solid red;
-   
-}
-
 .logo-menu {
     display: inline-block;
     width: 310px;
@@ -96,4 +91,16 @@ nav > ul > li > a:hover {
 
 video {
     width: 100%;
+}
+
+.hr {
+    margin: 20px 100px;
+}
+
+.container-quem-somos {
+    display: inline-block;
+}
+
+.quem-somos h1 {
+    display: inline-block;
 }

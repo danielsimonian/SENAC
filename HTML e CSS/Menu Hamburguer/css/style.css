@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+li {
+    background-color: gray;
+    margin: 1px;
+    padding: 10px;
+    color: white;
+}
+
+a {
+    display: block;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+li:hover {
+    background-color: black;
+}
