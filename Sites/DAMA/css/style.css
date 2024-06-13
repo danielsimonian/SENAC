@@ -18,9 +18,8 @@ a:visited {
     color: var(--branco);
 }
 
-main {
+body {
     background-color: var(--azul);
-    height: 900px;
 }
 
 .container-menu {
