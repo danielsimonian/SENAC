@@ -36,3 +36,36 @@ a:visited {
 li:hover {
     background-color: black;
 }
+
+#burguer {
+    cursor: pointer;
+}
+
+menu {
+    display: none;
+}
+
+main {
+    width: 500px;
+    background-color: grey;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+@media screen and (min-width:768px) {
+    span#burguer {
+        display: none;
+    }
+
+    li {
+        display: inline-block;
+        width: 110px;
+        margin: 0 -2px;
+    }
+
+    main {
+        width: 900px;
+    }
+}
+

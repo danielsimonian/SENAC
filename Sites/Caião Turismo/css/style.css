@@ -1,0 +1,115 @@
+@charset "UTF-8";
+@font-face {
+    font-family: gilroy-bold;
+    src: url(../font/Gilroy-ExtraBold.otf) format(opentype);
+}
+
+@font-face {
+    font-family: gilroy-light;
+    src: url(../font/Gilroy-Light.otf) format(opentype);
+}
+
+:root {
+    --fontLight: gilroy-light;
+    --fontBold: gilroy-bold;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: gilroy-bold;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+a {
+    display: block;
+}
+
+body {
+    background-image: url(../img/bg-montains.jpg);
+    background-size: cover;
+    position: relative;
+    width: 100vw;
+}
+
+header {
+    display: block;
+    padding: 10px 0;
+    text-align: right;
+}
+
+.div-logo {
+    display: inline-block;
+    font-size: 0.6em;
+    position: absolute;
+    left: 30px;
+}
+
+.div-logo > h1 {
+    font-family: var(--fontBold);
+}
+
+menu {
+    display: none;
+}
+
+.menu-ul {
+    float: right;
+    width: 20%;
+    list-style-type: none;
+}
+
+.menu-li {
+    margin-right: 10px;
+}
+
+.menu-li > a {
+    font-family: var(--fontLight);
+}
+
+.menu-li:hover {
+    background-color: white;
+}
+
+#menu-hamburguer {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+@media screen and (min-width:768px) {
+    #menu-hamburguer {
+        display: none;
+    }
+
+    menu {
+        display: inline-block;
+        position: relative;
+    }
+
+    .div-logo > h1 {
+        font-size: 2.4em;
+    }
+
+    .menu-ul {
+        width: 70%;
+    }
+
+    .menu-ul > li > a {
+        font-size: 1.2em;
+    }
+
+    .menu-li {
+        display: inline-block;
+        font-family: gilroy-light;
+        font-size: 0.9em;
+        list-style-type: none;
+        padding: 0 20px;
+    }
+}
