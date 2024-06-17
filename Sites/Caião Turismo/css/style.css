@@ -18,6 +18,7 @@
     --fontLight: gilroy-light;
     --fontBold: gilroy-bold;
     --fontBold2: chronicle-display-bold;
+    --azul: #0B1D26;
 }
 
 * {
@@ -37,11 +38,12 @@ a {
     display: block;
 }
 
-body {
-    background-image: url(../img/bg-montains.jpg);
+html, body {
+    background-image:  url(../img/casa\ de\ pedra.jpg);
     background-size: cover;
     position: relative;
-    width: 100vw;
+    width: 100%;
+    height: 100%;
     font-size: 100%;
 }
 
@@ -59,6 +61,10 @@ header {
     left: 5%;
 }
 
+.div-logo > a {
+    color: white;
+}
+
 .div-logo > h1 {
     font-family: var(--fontBold2);
 }
@@ -68,9 +74,10 @@ menu {
 }
 
 .menu-ul {
-    float: right;
     width: 30%;
     list-style-type: none;
+    position: absolute;
+    right: 5px;
 }
 
 .menu-li {
@@ -79,15 +86,17 @@ menu {
 
 .menu-li > a {
     font-family: var(--fontLight);
+    color: white;
 }
 
 .menu-li:hover {
-    background-color: white;
+    background-color: black;
 }
 
 #menu-hamburguer {
     margin-right: 10px;
     cursor: pointer;
+    color: white;
 }
 
 @media screen and (min-width:768px) {
@@ -134,7 +143,8 @@ menu {
 }
 
 main {
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 /* TEXTO DA HOME */
@@ -182,6 +192,45 @@ main {
     width: 300px;
     margin: auto;
     font-size: 1em;
-    border: solid red;
+    color: white;
 }
 
+/* ------ CAVERNAS ------ */
+
+.cavernas-h1 {
+    font-family: var(--fontBold);
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}
+
+.caverna-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.caverna-card {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    margin: 15px;
+    border-radius: 5px;
+}
+
+.caverna-text {
+    text-align: center;
+    font-family: var(--fontLight);
+    font-size: 1.3em;
+}
+
+.caverna-img {
+    width: 300px;
+    border-radius: 0 0 5px 5px;
+    filter: grayscale(50%);
+}
+
+.caverna-img:hover {
+    transition: 100ms;
+    filter: grayscale(0%);
+}
