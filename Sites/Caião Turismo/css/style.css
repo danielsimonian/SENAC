@@ -9,15 +9,20 @@
     src: url(../font/Gilroy-Light.otf) format(opentype);
 }
 
+@font-face {
+    font-family: chronicle-display-bold;
+    src: url(../font/Chronicle\ Display\ Black.otf) format(opentype);
+}
+
 :root {
     --fontLight: gilroy-light;
     --fontBold: gilroy-bold;
+    --fontBold2: chronicle-display-bold;
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: gilroy-bold;
 }
 
 a:link {
@@ -37,10 +42,12 @@ body {
     background-size: cover;
     position: relative;
     width: 100vw;
+    font-size: 100%;
 }
 
 header {
     display: block;
+    height: 30px;
     padding: 10px 0;
     text-align: right;
 }
@@ -49,11 +56,11 @@ header {
     display: inline-block;
     font-size: 0.6em;
     position: absolute;
-    left: 30px;
+    left: 5%;
 }
 
 .div-logo > h1 {
-    font-family: var(--fontBold);
+    font-family: var(--fontBold2);
 }
 
 menu {
@@ -93,10 +100,6 @@ menu {
         position: relative;
     }
 
-    .div-logo > h1 {
-        font-size: 2.4em;
-    }
-
     .menu-ul {
         width: 100%;
     }
@@ -110,6 +113,75 @@ menu {
         font-family: gilroy-light;
         font-size: 0.9em;
         list-style-type: none;
-        padding: 0 20px;
+        padding: 0 5% 0 0;
+    }
+
+/* TEXTO DA HOME */
+
+    #div-h1 {
+        font-size: 2em;
+        width: 600px;
+    }
+    #container-h6 {
+        font-size: 1.4em;
+        letter-spacing: 2px;
+        width: 600px;
+    }
+    
+    #hr-h6 {
+        height: 5px;
     }
 }
+
+main {
+    height: 100vh;
+}
+
+/* TEXTO DA HOME */
+
+.text-home {
+    margin-top: 100px;
+}
+
+    /* TEXTO H6 DA HOME */
+
+.container-h6 {
+    text-align: left;
+    width: 300px;
+    margin: auto;
+}
+
+.div-hr {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+}
+
+.hr-h6 {
+    display: inline-block;
+    width: 50px;
+    height: 4px;
+    border: solid 0.9px #FBD784;
+    border-bottom: unset;
+    border-left: unset;
+    border-right: unset;
+}
+
+.div-h6 {
+    display: inline-block;
+    text-align: center;
+    font-family: var(--fontLight);
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #FBD784;
+}
+
+    /* TEXTO H1 DA HOME */
+
+.div-h1 {
+    text-align: left;
+    width: 300px;
+    margin: auto;
+    font-size: 1em;
+    border: solid red;
+}
+
