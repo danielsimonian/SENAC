@@ -41,10 +41,8 @@ a {
 html, body {
     background-image:  url(../img/casa\ de\ pedra.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
-    width: 100%;
-    height: 100%;
-    font-size: 100%;
 }
 
 header {
@@ -52,6 +50,10 @@ header {
     height: 30px;
     padding: 10px 0;
     text-align: right;
+}
+
+main {
+    background: linear-gradient(to top, var(--azul) 60%, rgba(238, 238, 238, 0));
 }
 
 .div-logo {
@@ -124,17 +126,22 @@ menu {
         list-style-type: none;
         padding: 0 5% 0 0;
     }
-
 /* TEXTO DA HOME */
+    .text-home {
+        display: block;
+        width: 500px;
+        margin: auto;
+    }
 
     #div-h1 {
-        font-size: 2em;
-        width: 600px;
+        font-size: 1.7em;
+        width: 500px;
     }
     #container-h6 {
-        font-size: 1.4em;
+        display: inline-block;
+        font-size: 0.8em;
         letter-spacing: 2px;
-        width: 600px;
+        width: 300px;
     }
     
     #hr-h6 {
@@ -142,10 +149,7 @@ menu {
     }
 }
 
-main {
-    width: 100%;
-    height: 100%;
-}
+
 
 /* TEXTO DA HOME */
 
@@ -194,6 +198,61 @@ main {
     font-size: 1em;
     color: white;
 }
+
+/* CARD */
+
+.container-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.card {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    width: 470px;
+    height: 300px;
+}
+
+.card-h1 {
+    font-size: 6em;
+    position: absolute;
+    font-family: var(--fontBold);
+    color: white;
+    opacity: 20%;
+}
+
+.card-content {
+    width: 70%;
+    color: white;
+    padding: 50px 40px 0 50px;
+}
+
+.card-h2 {
+    padding-top: 5px;
+    font-family: var(--fontBold2);
+}
+
+.card-p {
+    font-family: var(--fontLight);
+}
+
+.card-div-img {
+    width: 30%;
+}
+
+.card-img {
+    width: 130px;
+    height: 300px;
+}
+
+.card-link {
+    font-size: 0.7em;
+    padding-top: 20px;
+}
+
 
 /* ------ CAVERNAS ------ */
 
