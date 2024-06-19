@@ -46,40 +46,41 @@ html, body {
 }
 
 header {
-    display: block;
-    height: 30px;
-    padding: 10px 0;
-    text-align: right;
-}
-
-main {
-    background: linear-gradient(to top, var(--azul) 60%, rgba(238, 238, 238, 0));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "logo hamburguer"
+                        "null ul";
+                        row-gap: 10px;
+    height: 60px;
+    padding: 10px 0 10px 20px;
 }
 
 .div-logo {
-    display: inline-block;
-    font-size: 0.6em;
-    position: absolute;
-    left: 5%;
+    grid-area: logo;
+    
 }
 
 .div-logo > a {
     color: white;
+    font-size: 0.7em;
+    width: fit-content;
 }
 
-.div-logo > h1 {
-    font-family: var(--fontBold2);
-}
+
 
 menu {
+    margin-top: 10px;
     display: none;
+    grid-area: ul;
+    justify-self: end;
 }
 
 .menu-ul {
-    width: 30%;
+    grid-area: ul;
     list-style-type: none;
-    position: absolute;
-    right: 5px;
+    text-align: right;
+    padding-right: 10px;
 }
 
 .menu-li {
@@ -96,19 +97,39 @@ menu {
 }
 
 #menu-hamburguer {
-    margin-right: 10px;
+    display: grid;
+    align-items: center;
+    justify-items: right;
+    padding-right: 20px;
     cursor: pointer;
     color: white;
 }
 
+main {
+    background: linear-gradient(to top, var(--azul) 60%, rgba(238, 238, 238, 0));
+}
+
 @media screen and (min-width:768px) {
+    header {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "logo menu";
+        height: 60px;
+        border: solid red;
+        padding: 10px 0 10px 20px;
+    }
+    
     #menu-hamburguer {
         display: none;
     }
 
     menu {
         display: inline-block;
-        position: relative;
+        margin-top: 20px;
+        grid-area: menu;
+        width: 600px;
+        border: solid red;
+        
     }
 
     .menu-ul {
@@ -126,6 +147,7 @@ menu {
         list-style-type: none;
         padding: 0 5% 0 0;
     }
+
 /* TEXTO DA HOME */
     .text-home {
         display: block;
@@ -147,9 +169,19 @@ menu {
     #hr-h6 {
         height: 5px;
     }
+
+    /* card */
+
+    #container-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .card {
+        margin-left: 40px;
+    }
 }
-
-
 
 /* TEXTO DA HOME */
 
@@ -172,7 +204,7 @@ menu {
 
 .hr-h6 {
     display: inline-block;
-    width: 50px;
+    width: 30px;
     height: 4px;
     border: solid 0.9px #FBD784;
     border-bottom: unset;
@@ -184,8 +216,9 @@ menu {
     display: inline-block;
     text-align: center;
     font-family: var(--fontLight);
-    font-size: 1em;
+    font-size: 0.8em;
     text-transform: uppercase;
+    letter-spacing: 2px;
     color: #FBD784;
 }
 
@@ -253,6 +286,22 @@ menu {
     padding-top: 20px;
 }
 
+/* -- card-02 -- */
+
+.card2-h1 {
+    font-size: 6em;
+    position: absolute;
+    font-family: var(--fontBold);
+    color: white;
+    opacity: 20%;
+    padding: 0 0 0 50px;
+}
+
+.card2-content {
+    width: 70%;
+    color: white;
+    padding: 50px 0 0 100px;
+}
 
 /* ------ CAVERNAS ------ */
 
