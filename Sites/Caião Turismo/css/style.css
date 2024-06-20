@@ -58,7 +58,7 @@ header {
 
 .div-logo {
     grid-area: logo;
-    
+    align-self: center;
 }
 
 .div-logo > a {
@@ -67,10 +67,7 @@ header {
     width: fit-content;
 }
 
-
-
 menu {
-    margin-top: 10px;
     display: none;
     grid-area: ul;
     justify-self: end;
@@ -115,8 +112,6 @@ main {
         grid-template-columns: 1fr 2fr;
         grid-template-areas: "logo menu";
         height: 60px;
-        border: solid red;
-        padding: 10px 0 10px 20px;
     }
     
     #menu-hamburguer {
@@ -125,11 +120,9 @@ main {
 
     menu {
         display: inline-block;
-        margin-top: 20px;
         grid-area: menu;
         width: 600px;
-        border: solid red;
-        
+        align-self: center;
     }
 
     .menu-ul {
@@ -148,7 +141,7 @@ main {
         padding: 0 5% 0 0;
     }
 
-/* TEXTO DA HOME */
+/* texto da home */
     .text-home {
         display: block;
         width: 500px;
@@ -170,7 +163,7 @@ main {
         height: 5px;
     }
 
-    /* card */
+/* card */
 
     #container-card {
         display: flex;
@@ -183,13 +176,13 @@ main {
     }
 }
 
-/* TEXTO DA HOME */
+/* texto da home */
 
 .text-home {
     margin-top: 100px;
 }
 
-    /* TEXTO H6 DA HOME */
+/* texto h6 da home */
 
 .container-h6 {
     text-align: left;
@@ -222,7 +215,7 @@ main {
     color: #FBD784;
 }
 
-    /* TEXTO H1 DA HOME */
+/* texto h1 da home */
 
 .div-h1 {
     text-align: left;
@@ -232,7 +225,7 @@ main {
     color: white;
 }
 
-/* CARD */
+/* card */
 
 .container-card {
     display: flex;
@@ -286,7 +279,7 @@ main {
     padding-top: 20px;
 }
 
-/* -- card-02 -- */
+/* card-02 */
 
 .card2-h1 {
     font-size: 6em;
@@ -303,7 +296,7 @@ main {
     padding: 50px 0 0 100px;
 }
 
-/* ------ CAVERNAS ------ */
+/* ------ CAVERNAS.HTML ------ */
 
 .cavernas-h1 {
     font-family: var(--fontBold);
@@ -341,4 +334,62 @@ main {
 .caverna-img:hover {
     transition: 100ms;
     filter: grayscale(0%);
+}
+
+/* ------ ROTEIROS.HTML ------ */
+
+.main-roteiros {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto repeat(3, 1fr);
+    height: 100vh;
+}
+
+.roteiros {
+    grid-column: 2 / 6;
+    color: white;
+    justify-self: center;
+    align-self: center;
+    font-family: var(--fontBold);
+    font-size: 1.7em;
+}
+
+.parallax-fx {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 300px;
+}
+
+.h2-parallax {
+    font-family: var(--fontBold);
+    color: white;
+    font-variant-caps: petite-caps;
+}
+
+.p-parallax {
+    width: 300px;
+    height: 251px;
+    text-align: justify;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.356);
+    padding: 10px;
+    font-family: var(--fontes-pattern);
+    font-size: 0.8em;
+}
+
+.iniciante, .medio, .avancado {
+    grid-column: 1 / -1;
+}
+
+.iniciante {
+    background-image: url(../img/roteiro-turma.jpg);
+}
+
+.medio {
+    background-image: url(../img/caverna-morropreto.jpg);
+}
+
+.avancado {
+    background-image: url(../img/roteiro-turma.jpg);
 }
