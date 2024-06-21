@@ -8,30 +8,18 @@ html, body, main {
     background-color: var(--azul);
 }
 
+.social-icons {
+    align-items: right;
+}
+
 .dama-navbar {
     background-color: var(--azul);
 }
 
-header {
-    align-items: center;
-}
-
-
-.navbar-img {
-}
-
 .logo-icon {
-    width: 200px;
+    width: 150px;
 }
 
 .social-icon {
     width: 40px;
-}
-
-#hamburguer {
-    color: white;
-}
-
-@media screen {
-    
 }
