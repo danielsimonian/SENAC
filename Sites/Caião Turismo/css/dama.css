@@ -1,0 +1,25 @@
+/* -- PARALLAX-FX -- */
+
+.parallax-fx {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 300px;
+}
+
+.h2-parallax {
+    font-family: var(--fontBold);
+    color: white;
+    font-variant-caps: petite-caps;
+}
+
+.p-parallax {
+    width: 300px;
+    height: 251px;
+    text-align: justify;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.356);
+    padding: 10px;
+    font-family: var(--fontes-pattern);
+    font-size: 0.8em;
+}
