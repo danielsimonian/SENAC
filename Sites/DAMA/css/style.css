@@ -10,8 +10,6 @@
     --font-padrao: "Lexend", sans-serif;
 }
 
-
-
 html, body, main, footer {
     background-color: var(--azul);
 }
