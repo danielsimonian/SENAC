@@ -1,19 +1,55 @@
-function adicionaNumero(){
-    let numeroInserido = document.getElementById('numeroInserido').value
-    let lista = document.getElementById('lista')
-    let listaNumeros = []
+let num = document.getElementById('numero')
+let lista = document.getElementById('lista')
+let res =  document.getElementById('resultado')
+let valores = []
 
-    if (numeroInserido >= 1 && numeroInserido <=100){
-        let option = document.createElement("option")
-        option.innerHTML = `Valor ${numeroInserido} adicionado`
-        lista.appendChild(option)
-        listaNumeros.push(numeroInserido)
-
-        console.log(listaNumeros)
-
+function isNumero(n) {
+    if (Number(n) >= 1 && Number(n) <= 100) {
+        return true
     } else {
-        window.alert("Digite um valor entre 1 e 100!")
-    }
-    
+        return false
+    }   
 }
 
+function inLista(n, l) {
+    if (l.indexOf(Number(n)) != -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function adicionar() {
+    if (isNumero(num.value) && !inLista(num.value, valores)) {
+        valores.push(Number(num.value))
+        let option = document.createElement("option")
+        option.innerHTML = `Valor ${num.value} adicionado`
+        lista.appendChild(option)
+        console.log(valores)
+        res.innerHTML = ""
+    } else {
+        alert('Número encontrado na lista ou inválido!')
+    }
+    num.value = ""
+    num.focus() 
+}
+
+function finalizar() {
+    if( valores.length > 0) {
+        let soma = valores.reduce((a, b) => a + b, 0)
+        let maior = Math.max(...valores)
+        let menor = Math.min(...valores)
+        let media = soma / valores.length
+        
+        res.innerHTML = 
+        `
+            <p>Total de Números: ${valores.length}</p>
+            <p>Maior Número: ${maior}</p>
+            <p>Menor Número: ${menor}</p>
+            <p>Soma: ${soma}</p>
+            <p>Média: ${media.toFixed(2)}</p>
+        `
+    } else {
+        alert('Adicione um número antes de finalizar!')
+    }
+}
