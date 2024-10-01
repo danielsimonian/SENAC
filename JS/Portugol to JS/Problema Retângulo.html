@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 02</title>
+</head>
+<body>
+    <main>
+        
+        <section>
+            <h1>Problema Retângulo</h1>
+            <div>
+                <input type="text" name="" id="base" placeholder="Digite a base do retângulo">
+            </div>
+            <div>
+                <input type="text" name="" id="altura" placeholder="Digite a altura do retângulo">
+            </div>
+            <div class="botoes">
+                <input onclick="calculaArea()" class="botao" type="submit" value="Calcular">
+            </div>
+        </section>
+    </main>
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: auto;
+            gap: 10px;
+        }
+
+        section div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        .botoes {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            align-self: center;
+        }
+
+        .botao {
+            width: 100px;
+            border-radius: 5px;
+        }
+
+    </style>
+    
+    <script>
+        function calculaArea(){
+            let base = document.getElementById("base");
+            let baseN = Number(base.value);
+
+            let altura = document.getElementById("altura");
+            let alturaN = Number(altura.value);
+
+            let area = baseN*alturaN;
+
+            let perimetro = (baseN+alturaN)*2
+
+            let diagonal = Math.sqrt((baseN**2)+(alturaN**2))
+
+
+            
+            window.alert(`A ÁREA do retângulo é ${area.toFixed(2)}\nO PERÍMETRO do retângulo é ${perimetro.toFixed(2)}\nA DIAGONAL do retângulo é ${diagonal.toFixed(2)}`);
+
+            
+            
+
+        }
+
+    </script>
+
+</body>
+</html>

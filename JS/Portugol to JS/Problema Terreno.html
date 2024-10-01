@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 01</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Problema Terreno</h1>
+            <div>
+                <input type="text" name="" id="largura" placeholder="Digite a largura do terreno">
+            </div>
+            <div>
+                <input type="text" name="" id="comprimento" placeholder="Digite o comprimento do terreno">
+            </div>
+            <div>
+                <input type="text" name="" id="m2" placeholder="Digite o valor do m² do terreno">
+            </div>
+            <div class="botoes">
+                <input onclick="calculaArea()" class="botao" type="submit" value="Calcular">
+            </div>
+        </section>
+    </main>
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: auto;
+            gap: 10px;
+        }
+
+        section div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        .botoes {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            align-self: center;
+        }
+
+        .botao {
+            width: 100px;
+            border-radius: 5px;
+        }
+
+    </style>
+    <script>
+        function calculaArea(){
+            let largura = document.getElementById("largura");
+            let larguraN = Number(largura.value);
+
+            let compimento = document.getElementById("comprimento");
+            let comprimentoN = Number(comprimento.value);
+
+            let m2 = document.getElementById("m2");
+            let m2N = Number(m2.value);
+
+            let area = larguraN*comprimentoN;
+            let preco = area*m2N;
+            
+            window.alert(`A ÁREA do terreno é ${area.toFixed(2)} \nO PREÇO do terreno é ${preco.toFixed(2)}`);
+        }
+
+    </script>
+
+</body>
+</html>

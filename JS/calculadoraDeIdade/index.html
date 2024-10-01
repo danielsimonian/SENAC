@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    
+    <title>calculadoraDeIdade</title>
+</head>
+<body>
+    <main>
+        <div>
+            <input id="ano" type="number" min="1900" max="2024" placeholder="Digite sua idade">
+        </div>
+        <div class="checkbox">
+            <div>
+                <label for="m">Masculino</label>
+                <input type="radio" name="sexo" id="m">
+            </div>
+            <div>
+                <label for="f">Feminino</label>
+                <input type="radio" name="sexo" id="f">
+            </div>
+        </div>
+        <div>
+            <input type="button" value="OK" onclick="calculaIdade()">
+        </div>
+        <div>
+            <h3 id="texto"></h3>
+        </div>
+        <img id="img" src="" alt="">
+    </main>
+    <script src="script/script.js"></script>
+</body>
+</html>

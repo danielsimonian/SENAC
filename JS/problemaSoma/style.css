@@ -1,0 +1,39 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.botao {
+    border-radius: 5px;
+    height: 50px;
+}
+
+.insira {
+    width: 210px;
+    height: 30px;
+}
+
+.botaoOK {
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+}
+
+.numerosSomados {
+    display: flex;
+    flex-direction: row;
+}
+
+.numero {
+    margin: 4px;
+    padding: 4px;
+}

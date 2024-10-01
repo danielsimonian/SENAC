@@ -1,0 +1,23 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div {
+    display: flex;
+    justify-content: center;  
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    margin: 10px;
+}
