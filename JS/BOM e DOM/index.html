@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Calcula dimensões da tela</h1>
+        </section>
+        <section>
+            <input onclick="dimensao()" type="button" value="Calcular">
+        </section>
+        <section>
+            <input type="button" value="Resetar" onclick="location.reload()">
+        </section>
+        <section>
+            <p id="resultado"></p>
+        </section>
+        <section>
+            <input type="button" value="Ir para site" onclick="irParaSite()">
+        </section>
+        <section>
+            <input type="button" value="Abre Janela" onclick="abrirJanela()">
+        </section>
+        <section>
+            <input type="button" value="Fecha Janela"  onclick="fecharJanela()">
+        </section>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
