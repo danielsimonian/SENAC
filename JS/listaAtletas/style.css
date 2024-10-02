@@ -1,0 +1,45 @@
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border: solid 1px;
+    border-collapse: collapse;
+}
+
+thead > tr > th {
+    position: sticky;
+    background-color: black;
+}
+
+th, tr, td {
+    border: solid 1px;
+    padding: 10px;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+tbody>tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+.total {
+    text-align: center;
+}
+
+/* cadastro atleta */
+
+section {
+    text-align: center;
+}
+
+.cadastro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
