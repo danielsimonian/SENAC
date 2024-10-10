@@ -19,7 +19,7 @@ function calculaImc(){
     let alturaN = Number(altura.value)
     let pesoN = Number(peso.value)
     let melhorPlano = document.getElementById('melhorPlano')
-    imc = pesoN/(alturaN*alturaN)
+    imc = (pesoN/(alturaN*alturaN)).toFixed(2)
     let valorPlano = 399.99
 
     if(imc < 16 || imc > 30) {
@@ -35,7 +35,7 @@ function calculaImc(){
                     <h3>Olá ${nome}, tudo bem?</h3>
                 </div>
                 <div>
-                    <p>Segundo o IMC do seu bebê de <strong>${imc}</strong></p>
+                    <p>Segundo o <strong><strong>IMC</strong></strong> do seu bebê de <strong>${imc}</strong></p>
                 </div>
                 <div>
                     <h4>Seu plano ideal é o:</h4>
@@ -61,7 +61,7 @@ function calculaImc(){
                     <h3>Olá ${nome}, tudo bem?</h3>
                 </div>
                 <div>
-                    <p>Segundo o IMC do seu filho de <strong>${imc}</strong></p>
+                    <p>Segundo o <strong>IMC</strong> do seu filho de <strong>${imc}</strong></p>
                 </div>
                 <div>
                     <h4>Seu plano ideal é o:</h4>
@@ -87,7 +87,7 @@ function calculaImc(){
                     <h3>Olá ${nome}, tudo bem?</h3>
                 </div>
                 <div>
-                    <p>Segundo o IMC do seu filho de <strong>${imc}</strong></p>
+                    <p>Segundo o <strong>IMC</strong> do seu filho de <strong>${imc}</strong></p>
                 </div>
                 <div>
                     <h4>Seu plano ideal é o:</h4>
@@ -112,7 +112,7 @@ function calculaImc(){
                     <h3>Olá ${nome}, tudo bem?</h3>
                 </div>
                 <div>
-                    <p>Segundo seu IMC de <strong>${imc}</strong></p>
+                    <p>Segundo seu <strong>IMC</strong> de <strong>${imc}</strong></p>
                 </div>
                 <div>
                     <h4>Seu plano ideal é o:</h4>
@@ -138,7 +138,7 @@ function calculaImc(){
                     <h3>Olá ${nome}, tudo bem?</h3>
                 </div>
                 <div>
-                    <p>Segundo seu IMC de <strong>${imc}</strong></p>
+                    <p>Segundo seu <strong>IMC</strong> de <strong>${imc}</strong></p>
                 </div>
                 <div>
                     <h4>Seu plano ideal é o:</h4>
@@ -164,7 +164,7 @@ function calculaImc(){
                     <h3>Olá ${nome}, tudo bem?</h3>
                 </div>
                 <div>
-                    <p>Segundo seu IMC de <strong>${imc}</strong></p>
+                    <p>Segundo seu <strong>IMC</strong> de <strong>${imc}</strong></p>
                 </div>
                 <div>
                     <h4>Seu plano ideal é o:</h4>

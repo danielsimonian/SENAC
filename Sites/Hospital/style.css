@@ -291,24 +291,32 @@ button {
 }
 
 /* SECTION PLANOS */
+.descubra h1 {
+    color: white;
+    font-size: 40px;
+    margin-left: 100px;
+}
+
 .section-planos {
     display: flex;
     flex-direction: row;
-    height: 300px;
+    justify-content: left;
+    align-items: center;
+    gap: 100px;
+    height: 400px;
     width: 100vw;
     background-color: #033f72;
 }
 
-.inputs-imc, .melhor-plano {
+.inputs, .melhor-plano {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-left: 100px;
 }
 
-.inputs-imc input {
+.inputs-imc {
     border-radius: 5px;
     padding: 5px;
     height: 30px;
@@ -316,7 +324,7 @@ button {
 }
 
 .btn-imc {
-    height: 400px;
+    width: 100px;
 }
 
 .melhor-plano {

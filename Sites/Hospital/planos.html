@@ -36,13 +36,20 @@
             </div>
         </section>
         <section class="section-planos">
-            <div class="inputs-imc">
-                <input id="nome" class="nome-imc" type="text" placeholder="Nome">
-                <input id="idade" class="idade-imc" type="text" placeholder="Idade">
-                <input id="altura" class="altura-imc" type="text" placeholder="Altura">
-                <input id="peso" class="peso-imc" type="text" placeholder="Peso">
-                <input class="btn-imc" onclick="calculaImc()" type="button" value="Seu melhor plano!">
-                <input onclick="location.reload()" type="reset" name="" id="">
+            <div class="descubra">
+                <h1>
+                    Descubra qual<br> é o PLANO IDEAL <br>para você!
+                </h1>
+            </div>
+            <div class="inputs">
+                <input class="inputs-imc" id="nome" class="nome-imc" type="text" placeholder="Nome">
+                <input class="inputs-imc" id="idade" class="idade-imc" type="text" placeholder="Idade">
+                <input class="inputs-imc" id="altura" class="altura-imc" type="text" placeholder="Altura">
+                <input class="inputs-imc" id="peso" class="peso-imc" type="text" placeholder="Peso">
+                <div class="btns-imc">
+                    <input class="btn-imc" onclick="calculaImc()" type="button" value="Calcule">
+                    <input class="btn-imc" onclick="location.reload()" type="reset" name="" id="">
+                </div>
             </div>
             <div id="melhorPlano" class="melhor-plano">
                 
