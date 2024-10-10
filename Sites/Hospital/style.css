@@ -55,8 +55,8 @@ body {
 .menu li a.archive:before {
   content: "\f187";
 }
-.menu li a.pencil:before {
-  content: "\f040";
+.menu li a.whatsapp:before {
+  content: "📱";
 }
 .menu li a.contact:before {
   content: "\f003";
@@ -292,26 +292,58 @@ button {
 
 /* SECTION PLANOS */
 .section-planos {
+    display: flex;
+    flex-direction: row;
     height: 300px;
     width: 100vw;
     background-color: #033f72;
 }
 
-.inputs-imc, .btn-imc, .melhor-plano {
+.inputs-imc, .melhor-plano {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
+    margin-left: 100px;
 }
 
-.inputs-imc input, .btn-imc input {
+.inputs-imc input {
     border-radius: 5px;
     padding: 5px;
+    height: 30px;
+    width: 200px;
+}
+
+.btn-imc {
+    height: 400px;
 }
 
 .melhor-plano {
     color: white;
+}
+
+.melhor-plano {
+    display: flex;
+    text-align: center;
+}
+
+.descricao-plano {
+    padding: 10px; 
+    border: solid #FA4F75 1px;
+}
+
+.descricao-plano h1 {
+    color: #FA4F75;
+}
+
+.sub-titulo {
+    color: #ff7492c2; 
+    font-weight: 600;
+}
+
+.preco {
+    font-weight: 100;
 }
 
 /* FOOTER */
