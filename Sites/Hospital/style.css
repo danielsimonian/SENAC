@@ -407,7 +407,87 @@ button {
     }
     .para{
     padding-left:5px;
-}  
+    }
+
+    main {
+        font-size: 0.5em;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .h1-logo {
+        font-size: 3em;
+    }
+
+    .exames-vacinas {
+        flex-direction: column;
+        gap: 0px;
+        text-align: center;
+    }
+
+    .descricao-home {
+        margin-left: 0px;
+    }
+
+    .galeria-home {
+        margin-bottom: 10px;
+    }
+
+    .cards-servicos {
+        flex-direction: column;
+        font-size: 2em;
+    }
+
+    .card {
+
+        width: 300px;
+    }
+
+    .card img {
+        width: 100px;
+    }
+
+    .footer-1 {
+        font-size: 0.8em;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-2 {
+        display: inline-block;
+        height: 140px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Plano ideal */
+    .section-planos {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 10px;
+        height: 100%;
+    }
+
+    .descubra h1 {
+        font-size: 3em;
+        margin: 0px;
+    }
+
+    .melhor-plano {
+        margin: 40px;
+        font-size: 2em;
+    }
+
+    /* Contato */
+
+    .div-forms {
+        font-size: 2em;
+    }
 }
 @media screen and (max-height: 34em){
   .menu li,
@@ -420,3 +500,4 @@ button {
         height:3.5em;
     }
 }
+
