@@ -7,6 +7,13 @@ function MeuComando({textoBotao}){
   )
 }
 
+const products = [
+    { title: 'Cabbage', id: 1 },
+    { title: 'Garlic', id: 2 },
+    { title: 'Apple', id: 3 },
+  ];
+
+
 function App() {
   return (
     <div className="App">
@@ -17,5 +24,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
