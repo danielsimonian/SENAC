@@ -8,7 +8,20 @@
 </head>
 <body id="mosquito">
     <main>
-        <button onclick="comecarPartida()">Começar!</button>
+        <div>
+            <img class="mata-mosquito" src="./img/game.png" alt="">
+        </div>
+        <div class="selectdiv">
+            <label for="">
+                <select id="level">
+                    <option value="facil">Fácil</option>
+                    <option value="medio">Médio</option>
+                    <option value="dificil">Difícil</option>
+                </select>
+            </label>
+        </div>
+        
+        <button onclick="comecarPartida()" class="button-53" role="button">Começar a partida!</button>
     </main>
 
     <script src="./script.js"></script>
