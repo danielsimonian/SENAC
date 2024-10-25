@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    font-family: "Arima", system-ui;;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+img {
+    width: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, h1 {
+    color: rgb(54, 54, 54);
+    font-weight: bolder;
+}
+
+input {
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.container-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.404);
+    border-radius: 5px;
+    padding: 0 30px;
+    gap: 10px;
+}
+
+.container-inputs {
+    background-color: rgba(128, 128, 128, 0.404);
+    padding: 30px;
+    border-radius: 5px;
+}
