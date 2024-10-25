@@ -1,3 +1,9 @@
+<?php
+    echo '<pre>';
+    print_r($_POST);
+    echo '</pre>'
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,7 +20,7 @@
             <h1>Password´s Wallet</h1>
         </section>
         <section class="container-inputs">
-            <form action="">
+            <form method="POST" action="index.php">
                 <label for="">Serviço/SITE</label>
                 <input type="text" name="" id="">
                 <label for="">Login/e-mail</label>
