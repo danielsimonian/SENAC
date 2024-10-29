@@ -1,19 +1,41 @@
 <?php
+/*    
+    //escreve os dados inseridos na tela
     echo '<pre>';
     print_r($_POST);
     echo '</pre>';
+*/
 
     //conexão com o banco
-
     $host = 'localhost';
     $user = 'root';
     $pass = '';
-    $bd = 'db_lojadecarros';
+    $db = 'db_senhas';
     $link = mysqli_connect($host, $user, $pass, $db);
+
+    //cria o banco
+    mysqli_query($link, 'CREATE DATABASE IF NOT EXISTS DB_SENHAS');
+    
+    //cria a tb do banco
+    mysqli_query($link, 'CREATE TABLE IF NOT EXISTS TB_INFO(
+        id int primary key auto_increment,
+        servico varchar(50) not null,
+        login varchar(50) not null,
+        senha varchar(20) not null
+    )');
 
     if($link) {
         echo'banco conectado';
     };
+
+    //relaciona os inputs aos campos da tabela criada no db
+    $servico = $_POST['servico'];
+    $login = $_POST['login'];
+    $senha = $_POST['senha'];
+
+    //conecta os inputs com o banco
+    mysqli_query($link, "INSERT INTO TB_INFO (SERVICO, LOGIN, SENHA) VALUES ('$servico', '$login', '$senha')");
+
 ?>
 
 <!DOCTYPE html>
@@ -34,11 +56,11 @@
         <section class="container-inputs">
             <form method="POST" action="index.php">
                 <label for="">Serviço/SITE</label>
-                <input type="text" name="servico" id="">
+                <input type="text" name="servico" id="" required>
                 <label for="">Login/e-mail</label>
-                <input type="text" name="login" id="">
+                <input type="text" name="login" id="" required>
                 <label for="">Senha</label>
-                <input type="password" name="senha" id="">
+                <input type="password" name="senha" id="" required>
                 <button type="submit">Cadastrar</button>
             </form>
         </section>
