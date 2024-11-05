@@ -95,7 +95,10 @@
                            echo "<td>".$dados['servico']."</td>";
                            echo "<td>".$dados['login']."</td>";
                            echo "<td>".$dados['senha']."</td>";
-                           echo "<td><button class='btn-menor btn-menor-excluir'><a href='index.php?acao=excluir&id=".$dados["id"]."'>Excluir</a></button><button class='btn-menor'><a>Editar</a></button></td>";
+                           echo "<td>
+                            <button class='btn-menor btn-menor-excluir'><a href='index.php?acao=excluir&id=".$dados["id"]."'>Excluir</a></button>
+                            <button class='btn-menor'><a href='atualizar.php?id=".$dados["id"]."'>Editar</a></button>
+                                </td>";
                        echo "</tr>";
                     };
                     ?>
