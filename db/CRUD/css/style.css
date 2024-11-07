@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 * {
-    font-family: "Arima", system-ui;;
+    font-family: "Arima", system-ui;
+}
+
+:root {
+    --marron: #af582f;
+    --marron-escuro: #703b21;
+    --marron-claro: #ffe8dc;
+}
+
+body {
+    background-color: var(--marron-claro);
 }
 
 main {
@@ -12,8 +22,12 @@ main {
     gap: 10px;
 }
 
+section {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;}
+
 img {
     width: 40px;
+    color: white;
 }
 
 form {
@@ -22,7 +36,7 @@ form {
 }
 
 label, h1 {
-    color: rgb(54, 54, 54);
+    color: white;
     font-weight: bolder;
 }
 
@@ -30,20 +44,68 @@ input {
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 20px;
+    border-style: none;
 }
 
 .container-title {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(128, 128, 128, 0.404);
+    background-color: var(--marron);
     border-radius: 5px;
     padding: 0 30px;
     gap: 10px;
+    width: 40%;
 }
 
 .container-inputs {
-    background-color: rgba(128, 128, 128, 0.404);
+    background-color: var(--marron);
     padding: 30px;
     border-radius: 5px;
+    width: 50%;
+}
+
+button {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background-color: var(--marron-escuro);
+    font-size: 1.2em;
+    border: solid 1px;
+    border-style: none;
+}
+
+.btn-menor {
+    font-size: 0.8em;
+    color: white;
+}
+
+.btn-menor-excluir {
+    background-color: #920f05;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 5px;
+}
+
+thead {
+    background-color: var(--marron);
+    color: white;
+}
+
+th, td {
+    border: solid black 2px;
+    width: 400px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.atualizar > h1 {
+    text-align: center;
 }
