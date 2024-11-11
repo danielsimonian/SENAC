@@ -23,38 +23,4 @@
     } else {
         print('Digite um valor maior que ZERO!');
     }
-    
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <main>
-        <form method="POST">
-            <h1>Calculadora de IMC:</h1>
-            <input type="text" placeholder="Informe seu peso" name="peso" required>
-            <input type="text" placeholder="Informe sua altura" name="altura" required>
-            <input type="submit" value="Calcular">
-        </form>
-    </main>
-    <style>
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
-        }
-
-        input {
-            border-radius: 5px;
-            padding: 5px;
-            width: 150px;
-        }
-    </style>
-</body>
-</html>

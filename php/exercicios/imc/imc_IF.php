@@ -3,7 +3,7 @@
     $peso = $_POST['peso'];
     $altura = $_POST['altura'];
 
-    if($peso && $altura > 0){
+    if($peso > 0 && $altura > 0){
         $imc = $peso / ($altura * $altura);
 
         if($imc < 18.5){
