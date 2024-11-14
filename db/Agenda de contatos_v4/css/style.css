@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15+Charted&family=Kode+Mono:wght@400..700&family=Shadows+Into+Light&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    /*font-family: "Shadows Into Light", cursive;*/
+    font-family: "Kode Mono", monospace;}
+
+header {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    align-items: center;
+    justify-items: start;
+    background-color: black;
+    padding: 40px;
+}
+
+.btn-adiciona {
+    justify-self: end;
+}
+
+.tittle > h1 {
+    color: white;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn-small {
+    width: 70px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.search-container {
+    display: flex;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.buscar {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+caption {
+    margin: 10px;
+}
+
+thead {
+    background-color: rgb(216, 215, 215);
+}
+
+td {
+    border: solid 1px;
+    padding: 10px;
+}
+
+
+/* -- Adiciona -- */
+.adiciona-section {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    align-items: start;
+}
+
+.adiciona-tittle {
+    grid-column: 1 / 2;
+    margin-bottom: 10px;
+}
+
+form {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn-novo {
+    width: 100px;
+    margin-top: 20px;
+    color: white;
+    background-color: black;
+    font-weight: 500;
+}

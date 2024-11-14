@@ -1,5 +1,5 @@
 <?php
-/*    
+/*
     //escreve os dados inseridos na tela
     echo '<pre>';
     print_r($_POST);
