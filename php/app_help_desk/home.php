@@ -2,7 +2,7 @@
   require_once "validador_acesso.php";
 ?>
 
-<html>
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <title>App Help Desk</title>
@@ -17,7 +17,7 @@
         <img src="./img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
-      <a href="index.php"><button class="btn btn-dark">Sair</button></a>
+      <a href="logoff.php"><button class="btn btn-dark">Sair</button></a>
     </nav>
 
     <div class="container">    
