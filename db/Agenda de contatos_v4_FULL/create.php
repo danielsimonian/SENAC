@@ -1,52 +1,31 @@
 <?php
-require "conexao.php";
+require 'conexao.php';
 
-$id_pessoa = $_GET['id'];
-$sucesso = false;
-
-$query = "
-    SELECT 
-    p.id_pessoa, 
-    TRIM(p.nome) AS nome, 
-    GROUP_CONCAT(DISTINCT TRIM(e.email) SEPARATOR ', ') AS emails,
-    GROUP_CONCAT(DISTINCT TRIM(t.telefone) SEPARATOR ', ') AS telefones
-    FROM TB_PESSOA p
-    LEFT JOIN TB_EMAIL e ON p.id_pessoa = e.id_pessoa
-    LEFT JOIN TB_TELEFONE t ON p.id_pessoa = t.id_pessoa
-    WHERE p.id_pessoa = $id_pessoa
-    GROUP BY p.id_pessoa;
-";
-$resultado = mysqli_query($link, $query);
-$contato = mysqli_fetch_assoc($resultado);
-
-if (!$contato) {
-    die("Contato não encontrado.");
-}
+$_resultado = false;
 
 if ($_POST) {
     $nome = $_POST['nome'];
     $telefones = $_POST['telefone'];
     $emails = $_POST['email'];
 
-    mysqli_query($link, "UPDATE TB_PESSOA SET nome='$nome' WHERE id_pessoa=$id_pessoa");
+    // Criação do contato
+    mysqli_query($link, "INSERT INTO TB_PESSOA (NOME) VALUES ('$nome')");
+    $id_pessoa = mysqli_insert_id($link);
 
-    // Atualiza os telefones
-    mysqli_query($link, "DELETE FROM TB_TELEFONE WHERE id_pessoa = $id_pessoa");
+    // Inserção dos telefones
     $telefoneExpandido = explode(',', $telefones);
     foreach ($telefoneExpandido as $tel) {
         mysqli_query($link, "INSERT INTO TB_TELEFONE (TELEFONE, id_pessoa) VALUES ('$tel', $id_pessoa)");
     }
 
-    // Atualiza os e-mails
-    mysqli_query($link, "DELETE FROM TB_EMAIL WHERE id_pessoa = $id_pessoa");
+    // Inserção dos e-mails
     $emailExpandido = explode(',', $emails);
     foreach ($emailExpandido as $em) {
         mysqli_query($link, "INSERT INTO TB_EMAIL (EMAIL, id_pessoa) VALUES ('$em', $id_pessoa)");
     }
 
-    $sucesso = true;
-    header('Location: index.php?cadastro=sucesso');
-    exit();
+    unset($_POST);
+    $_resultado = true;
 }
 ?>
 
@@ -70,28 +49,28 @@ if ($_POST) {
     <main>
         <section class="adiciona-section">
             <div class="adiciona-tittle">
-                <h1>Editar contato</h1>
+                <h1>Adicionar novo contato</h1>
             </div>
             <form method="POST">
                 <div>
                     <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="nome" value="<?= htmlspecialchars($contato['nome']) ?>" required>
+                    <input type="text" name="nome" id="nome" placeholder="Nome" required>
                 </div>
                 <div>
                     <label for="telefone">Telefone(s):</label>
-                    <input type="text" name="telefone" id="telefone" value="<?= htmlspecialchars($contato['telefones']) ?>" required>
+                    <input type="text" name="telefone" id="telefone" placeholder="Telefone(s), separados por vírgula" required>
                 </div>
                 <div>
                     <label for="email">E-mail(s):</label>
-                    <input type="text" name="email" id="email" value="<?= htmlspecialchars($contato['emails']) ?>" required>
+                    <input type="text" name="email" id="email" placeholder="E-mail(s), separados por vírgula" required>
                 </div>
                 <?php
-                if ($sucesso) {
-                    echo '<p>Contato editado com sucesso!</p>';
+                if ($_resultado) {
+                    echo '<p>Contato adicionado com sucesso!</p>';
                 }
                 ?>
                 <div>
-                    <button class="btn-novo" type="submit">Editar</button>
+                    <button class="btn-novo" type="submit">Criar</button>
                 </div>
             </form>
         </section>
