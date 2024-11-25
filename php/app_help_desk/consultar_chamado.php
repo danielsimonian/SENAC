@@ -56,24 +56,34 @@
             <div class="card-body">
               
             <!-- Rodamos um foreach passando por todos os chamados -->
-              <?php foreach($chamados as $chamado){ ?>
+              <?php 
+                $usuarioPerfil = $_SESSION['perfil'];
+                $usuarioId = $_SESSION['id_usuario'];
+              
+              foreach($chamados as $chamado){ ?>
 
                 <!-- Usamos o explode para separar os valores de cada chamado em um novo array -->
                 <?php $chamado_dados = explode('|', $chamado); 
                 
                 //Para validar que só será exibido um novo card se possuir todos os valores preenchidos
-                  if(count($chamado_dados) < 3){
+                  if(count($chamado_dados) < 5){
                     continue; }
-                ?>
 
+                    if ($usuarioPerfil != 'administrador' && $chamado_dados[0] != $usuarioId) {
+                      continue;
+                      }
+              
+                ?>
               <div class="card mb-3 bg-light">
                 <div class="card-body">
 
                   <!-- Nos 3 itens abaixo aplicamos os valores respectivos em cada um deles -->
-                  <h5 class="card-title"><?php echo $chamado_dados[0] ?></h5>
-                  <h6 class="card-subtitle mb-2 text-muted"><?php echo $chamado_dados[1] ?></h6>
-                  <p class="card-text"><?php echo $chamado_dados[2] ?></p>
-                
+                  <h5 class="card-title"><?php echo $chamado_dados[2] ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?php echo $chamado_dados[3] ?></h6>
+                  <p class="card-text"><?php echo $chamado_dados[4] ?></p>   
+                  <?php if ($usuarioPerfil == 'administrador') { ?>
+                    <p class="card-text"><strong>ID do usuário: </strong><?php echo $chamado_dados[0] ?></p>
+                  <?php } ?>            
                 </div>
               </div>
               <?php } ?>

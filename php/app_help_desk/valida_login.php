@@ -1,34 +1,39 @@
 <?php
 session_start();
 
-//Usuários pré-cadastrados
+// Usuários pré-cadastrados
 $usuarios = array(
-    ['email' => 'danielsimonian@gmail.com', 'senha' => '123'],
-    ['email' => 'guigui@gmail.com', 'senha' => '456'],
-    ['email' => 'fefe@gmail.com', 'senha' => '789']
+    ['id' => 1, 'email' => 'danielsimonian@gmail.com', 'senha' => '123', 'perfil' => 'administrador'],
+    ['id' => 2, 'email' => 'guigui@gmail.com', 'senha' => '456', 'perfil' => 'usuario'],
+    ['id' => 3, 'email' => 'fefe@gmail.com', 'senha' => '789', 'perfil' => 'usuario']
 );
 
 $usuarioAutenticado = false;
+$usuarioId = null;
+$perfil = null;
 
-//RECEBENDO OS DADOS VIA MÉTODO GET
+// Recebendo os dados via método GET
 $emailUsuario = $_GET['email'];
 $senhaUsuario = $_GET['senha'];
 
-// AUTENTICANDO O USUÁRIO
+// Autenticando o usuário
 for ($idx = 0; $idx < count($usuarios); $idx++) {
     if ($emailUsuario == $usuarios[$idx]['email'] && $senhaUsuario == $usuarios[$idx]['senha']) {
         $usuarioAutenticado = true;
+        $usuarioId = $usuarios[$idx]['id']; // Captura o ID do usuário autenticado
+        $perfil = $usuarios[$idx]['perfil'];
         break;
-    } else {
-        $usuarioAutenticado = false;
     }
 }
 
-if($usuarioAutenticado){
-    // VALIDANDO A SESSÃO
+if ($usuarioAutenticado) {
+    // Validando a sessão
     $_SESSION['autenticado'] = 'sim';
+    $_SESSION['id_usuario'] = $usuarioId; // Armazena o ID do usuário na sessão
+    $_SESSION['perfil'] = $perfil;
     header('location: home.php');
 } else {
-    // VALIDANDO A SESSÃO
+    // Redirecionando para a página de login com erro
     header('location: index.php?login=erro');
 }
+?>

@@ -10,7 +10,7 @@
 <body>
 
   <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="home.php">
       <img src="./img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
       App Help Desk
     </a>
@@ -25,7 +25,7 @@
             Login
           </div>
           <div class="card-body">
-            <form action="valida_login.php" method="GET">
+            <form action="../app_help_desk_ignore/valida_login.php" method="GET">
               <div class="form-group">
                 <input name="email" type="email" class="form-control" placeholder="E-mail">
               </div>
