@@ -14,7 +14,7 @@
     $dados = $idUser . '|' . $perfil . '|' . $titulo . '|' . $categoria . '|' . $descricao . PHP_EOL;
 
     //Abrindo o arquivo e armazenando em uma variável
-    $arquivo = fopen('registros.hd','a');
+    $arquivo = fopen('../../../app_help_desk_seguranca/registros.hd','a');
     
     //Escrevendo no arquivo
     fwrite($arquivo, $dados);

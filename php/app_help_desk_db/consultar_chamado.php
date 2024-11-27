@@ -5,7 +5,7 @@
   $chamados = [];
 
   //Abrindo o arquivo para consultar os dados
-  $arquivo = fopen('registros.hd', 'r'); 
+  $arquivo = fopen('../../../app_help_desk_seguranca/registros.hd', 'r'); 
 
   //Enquanto não for o final do arquivo ele entra;
   while(!feof($arquivo)){

@@ -1,3 +1,5 @@
+
+
 <html lang="pt-BR">
 
 <head>
@@ -22,29 +24,26 @@
       <div class="card-login">
         <div class="card">
           <div class="card-header">
-            Login
+            Cadastre-se
           </div>
           <div class="card-body">
-            <form action="../app_help_desk_ignore/valida_login.php" method="GET">
+            <form action="registra_cadastro.php" method="POST">
               <div class="form-group">
-                <input name="email" type="email" class="form-control" placeholder="E-mail">
+                <input name="nome" type="text" class="form-control" placeholder="Nome Completo" required>
               </div>
               <div class="form-group">
-                <input name="senha" type="password" class="form-control" placeholder="Senha">
+                <input name="email" type="email" class="form-control" placeholder="E-mail" required>
               </div>
-              
-              <?php
-                //VALIDA SE O PARÂMETRO LOGIN EXISTE E SE FOI AUTENTICADO
-                if (isset($_GET['login']) && $_GET['login'] === 'erro') { ?>
-                  <div class="text-danger"> Usuário ou senha inválido(s)!</div>
-              <?php } ?>    
-              
-              <?php
-                //VALIDA SE O USUÁRIO TENTOU ENTRAR EM OUTRA PÁGINA SEM LOGAR
-                if (isset($_GET['login']) && $_GET['login'] === 'erro2') { ?>
-                  <div class="text-danger"> Login obrigatório!</div>
-              <?php } ?>
-              
+              <div class="form-group">
+                <input name="senha" type="password" class="form-control" placeholder="Senha" required>
+              </div>
+              <div class="form-group">
+                <select class="form-control" name="perfil" id="" required>
+                  <option disabled selected value="" style="text-align: center;">Selecione o nível</option>
+                  <option name="usuario" value="usuario">Usuário</option>
+                  <option name="administrador" value="administrador">Administrador</option>
+                </select>
+              </div>
               <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
             </form>
           </div>
@@ -52,5 +51,4 @@
       </div>
     </div>
 </body>
-
 </html>

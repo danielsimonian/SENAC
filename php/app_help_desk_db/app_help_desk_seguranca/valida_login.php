@@ -13,8 +13,8 @@ $usuarioId = null;
 $perfil = null;
 
 // Recebendo os dados via método GET
-$emailUsuario = $_GET['email'];
-$senhaUsuario = $_GET['senha'];
+$emailUsuario = $_POST['email'];
+$senhaUsuario = $_POST['senha'];
 
 // Autenticando o usuário
 for ($idx = 0; $idx < count($usuarios); $idx++) {
