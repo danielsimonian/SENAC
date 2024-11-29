@@ -1,12 +1,20 @@
 <?php
+require 'conexao.php';
 session_start();
 
-// Usuários pré-cadastrados
-$usuarios = array(
-    ['id' => 1, 'email' => 'danielsimonian@gmail.com', 'senha' => '123', 'perfil' => 'administrador'],
-    ['id' => 2, 'email' => 'guigui@gmail.com', 'senha' => '456', 'perfil' => 'usuario'],
-    ['id' => 3, 'email' => 'fefe@gmail.com', 'senha' => '789', 'perfil' => 'usuario']
-);
+// Consulta ao banco de dados
+$resultado = mysqli_query($link, 'SELECT id_user, nome, email, senha, perfil FROM TB_USER;');
+
+// Verifica se a consulta retornou algum dado
+if (!$resultado) {
+    die('Erro ao executar a consulta: ' . mysqli_error($link));
+}
+
+// Converte o resultado em um array associativo
+$usuarios = [];
+while ($row = mysqli_fetch_assoc($resultado)) {
+    $usuarios[] = $row;
+}
 
 $usuarioAutenticado = false;
 $usuarioId = null;
@@ -17,11 +25,11 @@ $emailUsuario = $_POST['email'];
 $senhaUsuario = $_POST['senha'];
 
 // Autenticando o usuário
-for ($idx = 0; $idx < count($usuarios); $idx++) {
-    if ($emailUsuario == $usuarios[$idx]['email'] && $senhaUsuario == $usuarios[$idx]['senha']) {
+foreach ($usuarios as $usuario) {
+    if ($emailUsuario == $usuario['email'] && $senhaUsuario == $usuario['senha']) {
         $usuarioAutenticado = true;
-        $usuarioId = $usuarios[$idx]['id']; // Captura o ID do usuário autenticado
-        $perfil = $usuarios[$idx]['perfil'];
+        $usuarioId = $usuario['id_user']; // Captura o ID do usuário autenticado
+        $perfil = $usuario['perfil'];
         break;
     }
 }
@@ -29,7 +37,7 @@ for ($idx = 0; $idx < count($usuarios); $idx++) {
 if ($usuarioAutenticado) {
     // Validando a sessão
     $_SESSION['autenticado'] = 'sim';
-    $_SESSION['id_usuario'] = $usuarioId; // Armazena o ID do usuário na sessão
+    $_SESSION['id_user'] = $usuarioId; // Armazena o ID do usuário na sessão
     $_SESSION['perfil'] = $perfil;
     header('location: home.php');
 } else {
