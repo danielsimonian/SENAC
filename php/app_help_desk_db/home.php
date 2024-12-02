@@ -28,7 +28,13 @@
               Menu
             </div>
             <div class="container-card-dan">
-              <a id="link" href="./abrir_chamado.php">
+            <?php 
+            if (isset($_GET['idUser']))
+              echo '<a id="link" href="./abrir_chamado.php?idUser=' . $_GET['idUser'] . '">';
+            else
+              echo '<a id="link" href="./abrir_chamado.php">';
+            ?>              
+
                 <div class="card-dan card-header">
                   <div class="card-dan-img">
                     <img src="./img/formulario_abrir_chamado.png" width="70" height="70">
@@ -52,5 +58,16 @@
         </div>
       </div>
     </div>
+    <?php if (isset($_GET['cadastro']) && $_GET['cadastro'] === 'sucesso') { ?>   
+      <script>
+          alert('Cadastrado com sucesso!');
+          window.history.replaceState(null, null, window.location.pathname);
+      </script>
+    <?php } if (isset($_GET['erro']) && $_GET['erro'] === 'erro') { ?>
+      <script>
+          alert('Erro ao cadastrar!');
+          window.history.replaceState(null, null, window.location.pathname);
+      </script>
+    <?php } ?>
   </body>
 </html>

@@ -50,5 +50,11 @@
         </div>
       </div>
     </div>
+    <?php if (isset($_GET['cadastro']) && $_GET['cadastro'] === 'erro') { ?>   
+      <script>
+          alert('E-mail já existente!');
+          window.history.replaceState(null, null, window.location.pathname);
+      </script>
+    <?php } ?>
 </body>
 </html>

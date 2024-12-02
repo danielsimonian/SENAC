@@ -59,7 +59,7 @@
     </div>
     <?php if (isset($_GET['cadastro']) && $_GET['cadastro'] === 'sucesso') { ?>   
       <script>
-          alert('Chamado cadastrado com sucesso!');
+          alert('Usuário cadastrado com sucesso!');
           window.history.replaceState(null, null, window.location.pathname);
       </script>
     <?php } ?>
