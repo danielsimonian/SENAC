@@ -3,13 +3,27 @@ require 'conexao.php';
 session_start();
 
 // Consulta ao banco de dados
-$resultado = mysqli_query($link, 'SELECT id_user, nome, email, senha, perfil FROM TB_USER WHERE email = "' . $_POST['email'] . '" AND senha = "' . $_POST['senha'] . '";');
+$resultado = mysqli_query($link, 'SELECT email, senha FROM TB_USER;');
 
 // Verifica se a consulta retornou algum dado
 if (!$resultado) {
     die('Erro ao executar a consulta: ' . mysqli_error($link));
-} else {
-    $usuarioAutenticado = true;
+}
+
+// Recebendo os dados via POST
+$emailUsuario = $_POST['email'];
+$senhaUsuario = $_POST['senha'];
+ 
+// Autenticando o usuário
+foreach ($resultado as $usuario) {
+    if ($emailUsuario == $usuario['email'] && $senhaUsuario == $usuario['senha']) {
+        $usuarioAutenticado = true;
+        $_SESSION['autenticado'] = 'sim';  // Definindo a sessão como autenticada
+        $_SESSION['id'] = $usuario['id']; // Armazenando o ID do usuário na sessão
+        $_SESSION['perfil'] = $usuario['perfil']; // Armazenando o perfil (Administrador/Usuário) na sessão
+        header('Location: home.php');
+        exit();
+    }
 }
 
 if ($usuarioAutenticado) {
@@ -26,4 +40,9 @@ if ($usuarioAutenticado) {
     // Redirecionando para a página de login com erro
     header('location: index.php?login=erro');
 }
+
+$usuarioAutenticado = false;
+ 
+
+
 ?>
