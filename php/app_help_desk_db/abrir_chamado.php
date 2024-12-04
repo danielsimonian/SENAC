@@ -61,15 +61,7 @@
                       <textarea name="descricao" class="form-control" rows="3"></textarea>
                     </div>
 
-                    <div class="form-group">
-                      <label>Id do usuário</label>
-                      <input name="idUsuarioAutenticado" type="text" class="form-control" placeholder="" value="
-                          <?php 
-                          if (isset($_GET['idUser']))
-                            echo trim($_GET['idUser']);
-                          else
-                            echo trim($_SESSION['idUsuarioAutenticado']); ?>" readonly=true>
-                    </div>
+    
 
                     <div class="row mt-5">
                       <div class="col-6">

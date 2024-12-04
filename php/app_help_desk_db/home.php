@@ -27,14 +27,8 @@
             <div class="card-header">
               Menu
             </div>
+            <a id="link" href="abrir_chamado.php">
             <div class="container-card-dan">
-            <?php 
-            if (isset($_GET['idUser']))
-              echo '<a id="link" href="./abrir_chamado.php?idUser=' . $_GET['idUser'] . '">';
-            else
-              echo '<a id="link" href="./abrir_chamado.php">';
-            ?>              
-
                 <div class="card-dan card-header">
                   <div class="card-dan-img">
                     <img src="./img/formulario_abrir_chamado.png" width="70" height="70">

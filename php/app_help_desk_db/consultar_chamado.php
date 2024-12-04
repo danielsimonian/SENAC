@@ -1,22 +1,10 @@
 <?php
   require_once "validador_acesso.php";
+  require 'conexao.php';
 
-  //declarando variável
-  $chamados = [];
-
-  //Abrindo o arquivo para consultar os dados
-  $arquivo = fopen('../../../app_help_desk_seguranca/registros.hd', 'r'); 
-
-  //Enquanto não for o final do arquivo ele entra;
-  while(!feof($arquivo)){
-    //Pega a linha e guarda no registro
-    $registro = fgets($arquivo);
-    //Pega o registro e guarda num array, onde conterá todos os chamados
-    $chamados[] = $registro;
-  }
-
-  //sem esquecer de fechar o arquivo
-  fclose($arquivo);
+  $chamados = mysqli_query($link, "SELECT TB_CHAMADOS.*, TB_USER.nome
+  FROM TB_CHAMADOS
+  INNER JOIN TB_USER ON TB_CHAMADOS.id_user = TB_USER.id_user");
 ?>
 
 <html lang="pt-BR">
@@ -57,33 +45,22 @@
               
             <!-- Rodamos um foreach passando por todos os chamados -->
               <?php 
-                $usuarioPerfil = $_SESSION['perfil'];
-                $usuarioId = $_SESSION['id_usuario'];
+                $userPerfil = $_SESSION['perfil'];
+                $userId = $_SESSION['id_user'];
               
               foreach($chamados as $chamado){ ?>
 
-                <!-- Usamos o explode para separar os valores de cada chamado em um novo array -->
-                <?php $chamado_dados = explode('|', $chamado); 
-                
-                //Para validar que só será exibido um novo card se possuir todos os valores preenchidos
-                  if(count($chamado_dados) < 5){
-                    continue; }
-
-                    if ($usuarioPerfil != 'administrador' && $chamado_dados[0] != $usuarioId) {
-                      continue;
-                      }
-              
-                ?>
               <div class="card mb-3 bg-light">
                 <div class="card-body">
 
                   <!-- Nos 3 itens abaixo aplicamos os valores respectivos em cada um deles -->
-                  <h5 class="card-title"><?php echo $chamado_dados[2] ?></h5>
-                  <h6 class="card-subtitle mb-2 text-muted"><?php echo $chamado_dados[3] ?></h6>
-                  <p class="card-text"><?php echo $chamado_dados[4] ?></p>   
-                  <?php if ($usuarioPerfil == 'administrador') { ?>
-                    <p class="card-text"><strong>ID do usuário: </strong><?php echo $chamado_dados[0] ?></p>
-                  <?php } ?>            
+                  <h5 class="card-title"><?php echo $chamado['titulo'] ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?php echo $chamado['categoria'] ?></h6>
+                  <p class="card-text"><?php echo $chamado['descricao'] ?></p>   
+                  <?php if ($userPerfil == 'administrador') { ?>
+                    <p class="card-text"><strong>Nome do usuário: </strong><?php echo $chamado['nome'] ?></p>
+                    <p class="card-text"><strong>ID do usuário: </strong><?php echo $chamado['id_user'] ?></p>
+                    <?php } ?>            
                 </div>
               </div>
               <?php } ?>
