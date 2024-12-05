@@ -1,6 +1,17 @@
 <?php
 require 'conexao.php';
 
+$cookie_name = 'user';
+$cookie_value = 'teste';
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
+if(isset($_COOKIE[$cookie_name])) {
+    echo ("Cookie '" . $cookie_name . "'está definido!<br>");
+    echo ($cookie_name . "<br>");
+    echo ($cookie_value);
+}
+
+
 // Se houver um termo de busca, capture diretamente do POST
 $searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
 
