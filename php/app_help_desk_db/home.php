@@ -48,6 +48,16 @@
                   </div>
                 </div>
               </a>
+              <a id="link" href="./editar_chamado.php">
+                <div class="card-dan card-header">
+                  <div class="card-dan-img">
+                    <img src="./img/formulario_consultar_chamado.png" width="70" height="70">
+                  </div>
+                  <div class="card-dan-p">
+                    <p>Editar Chamado</p>
+                  </div>
+                </div>
+              </a>
           </div>
         </div>
       </div>

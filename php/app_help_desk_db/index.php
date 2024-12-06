@@ -41,7 +41,7 @@
                 //VALIDA SE O PARÂMETRO LOGIN EXISTE E SE FOI AUTENTICADO
                 if (isset($_GET['login']) && $_GET['login'] === 'erro') { ?>
                   <div class="text-danger"> Usuário ou senha inválido(s)!</div>
-              <?php } ?>    
+              <?php } ?>
               
               <?php
                 //VALIDA SE O USUÁRIO TENTOU ENTRAR EM OUTRA PÁGINA SEM LOGAR

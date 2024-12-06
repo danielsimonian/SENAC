@@ -58,3 +58,16 @@
   padding: 0px;
   height: 30px;
 }
+
+/* editar_chamado */
+.container-tabela {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+.acao {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
