@@ -59,6 +59,12 @@
   height: 30px;
 }
 
+@media screen and (max-width: 2000px) {
+  .container-card-dan {
+    flex-wrap: wrap;
+  }
+}
+
 /* editar_chamado */
 .container-tabela {
   display: flex;

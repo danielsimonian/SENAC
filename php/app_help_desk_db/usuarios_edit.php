@@ -2,18 +2,18 @@
   require_once "validador_acesso.php";
   require_once "conexao.php";
 
-  $sql = "SELECT * FROM tb_chamados WHERE ID_CHAMADO = {$_GET['id_chamado']}";
+  $sql = "SELECT * FROM tb_user WHERE ID_user = {$_GET['id_user']}";
   $res = $link->query($sql);
   $row = $res->fetch_object();
 
   
     if($_POST){
-        $titulo = $_POST['titulo'];
-        $categoria = $_POST['categoria'];
-        $descricao = $_POST['descricao'];
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $perfil = $_POST['perfil'];
 
-        mysqli_query ($link, "UPDATE TB_CHAMADOS SET `titulo` = '$titulo', `categoria` = '$categoria', `descricao` = '$descricao' WHERE ID_CHAMADO = {$_GET['id_chamado']}"); 
-        header ('Location: editar_chamado.php?cadastro=sucesso');
+        mysqli_query ($link, "UPDATE TB_USER SET `nome` = '$nome', `email` = '$email', `perfil` = '$perfil' WHERE ID_USER = {$_GET['id_user']}"); 
+        header ('Location:usuarios.php?cadastro=sucesso');
     
       }
 ?>
@@ -42,7 +42,7 @@
         <div class="card-abrir-chamado">
           <div class="card">
             <div class="card-header">
-              Abertura de chamado
+              Editar Usuário
               <?php if (isset($_GET['cadastro']) && $_GET['cadastro'] === 'efetuado') { ?>
               <div style="color: green;">
                 <script>
@@ -57,25 +57,23 @@
                   
                   <form method = 'POST' action="">
                     <div class="form-group">
-                      <label>Título</label>
-                      <input name="titulo" type="text" class="form-control" value="<?php print trim($row->titulo);?>">
+                        <label>ID</label>
+                        <input readonly name="id_user" type="text" class="form-control" value="<?php print trim($row->id_user);?>">
                     </div>
+
                     <div class="form-group">
-                      <label>Categoria</label>
-                      <select name="categoria" class="form-control">
-                        <option value="<?php print trim($row->categoria);?>"><?php print trim($row->categoria);?></option>
-                        <option>Criação Usuário</option>
-                        <option>Impressora</option>
-                        <option>Hardware</option>
-                        <option>Software</option>
-                        <option>Rede</option>
-                        
-                      </select>
+                      <label>Nome</label>
+                      <input name="nome" type="text" class="form-control" value="<?php print trim($row->nome);?>">
                     </div>
-                    
+
                     <div class="form-group">
-                      <label>Descrição</label>
-                      <textarea name="descricao" class="form-control" rows="3" value=""><?php print trim($row->descricao);?></textarea>
+                      <label>E-mail</label>
+                      <input name="email" type="text" class="form-control" value="<?php print trim($row->email);?>">
+                    </div>
+
+                    <div class="form-group">
+                      <label>Perfil</label>
+                      <input name="perfil" type="text" class="form-control" value="<?php print trim($row->perfil);?>">
                     </div>
 
     

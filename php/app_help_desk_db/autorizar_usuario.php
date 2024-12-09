@@ -1,11 +1,7 @@
 <?php
   require_once "validador_acesso.php";
   require_once "conexao.php";
-  require_once "validador_user.php";
-
-  $chamados = mysqli_query($link, "SELECT TB_CHAMADOS.*, TB_USER.nome
-  FROM TB_CHAMADOS
-  INNER JOIN TB_USER ON TB_CHAMADOS.id_user = TB_USER.id_user");
+  $chamados = mysqli_query($link, "SELECT * FROM TB_USER WHERE `perfil` = 'administrador'");
 ?>
 
 <html lang="pt-BR">
@@ -32,48 +28,47 @@
           <thead class="thead-light">
             <tr>
               <th>ID</th>
-              <th>Título</th>
-              <th>Categoria</th>
-              <th>Descrição</th>
               <th>Usuário</th>
+              <th>E-mail</th>
+              <th>Perfil</th>
               <th>Ação</th>
             </tr>
           </thead>
           <tbody>
             <?php          
+           
 
               foreach($chamados as $chamado){ ?>
-
               <tr>
                   <!-- Nos 3 itens abaixo aplicamos os valores respectivos em cada um deles -->
-                  <td><?php echo $chamado['id_chamado'] ?></td>
-                  <td><?php echo $chamado['titulo'] ?></td>
-                  <td><?php echo $chamado['categoria'] ?></td>
-                  <td><?php echo $chamado['descricao'] ?></td>
                   <td><?php echo $chamado['id_user'] ?></td>
+                  <td><?php echo $chamado['nome'] ?></td>
+                  <td><?php echo $chamado['email'] ?></td>
+                  <td><?php echo $chamado['perfil'] ?></td>
                   <td class="acao">
-                <div>
-                  <a href="editar_chamado_edit.php?id_chamado=<?php echo $chamado['id_chamado']?>"><input type="button" value="Editar"></a>
-                </div>
-                <div>
-                <a href="excluir_chamado.php?id_chamado=<?php echo $chamado['id_chamado']?>"><input type="button" value="Excluir"></a>
-                </div>
-              </td>
+                    <div>
+                      <a href="autoriza_usuario.php?id_user=<?php echo $chamado['id_user'] . "&autorizar=sim"?>"><input type="button" value="Sim"></a>
+                    </div>
+                    <div>
+                    <a href="autoriza_usuario.php?id_user=<?php echo $chamado['id_user'] . "&autorizar=nao"?>"><input type="button" value="Não"></a>
+                    </div>
+                  </td>
               </tr>
-              <?php } ?>
 
+              <?php } ?>
+              
           </tbody>
         </table>
       </session>
     </main>
-    <?php if (isset($_GET['cadastro']) && $_GET['cadastro'] === 'sucesso') { ?>   
+    <?php if (isset($_GET['autorizado']) && $_GET['autorizado'] === 'sim') {?>
       <script>
-          alert('Edição realizada com sucesso!');
+          alert('Autorizado!');
           window.history.replaceState(null, null, window.location.pathname);
       </script>
-    <?php } if (isset($_GET['exclui']) && $_GET['exclui'] === 'sucesso') { ?>
+    <?php } if (isset($_GET['autorizado']) && $_GET['autorizado'] === 'nao') {?>
       <script>
-          alert('Cadastro excluído com sucesso!');
+          alert('Não Autorizado!');
           window.history.replaceState(null, null, window.location.pathname);
       </script>
     <?php } ?>

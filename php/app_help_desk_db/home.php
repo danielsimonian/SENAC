@@ -48,16 +48,52 @@
                   </div>
                 </div>
               </a>
+              <?php
+                $usuarioPerfil = $_SESSION['perfil'];
+
+                if ($usuarioPerfil == 'adm'){?>
+
               <a id="link" href="./editar_chamado.php">
                 <div class="card-dan card-header">
                   <div class="card-dan-img">
-                    <img src="./img/formulario_consultar_chamado.png" width="70" height="70">
+                    <img src="./img/editar-arquivo.png" width="70" height="70">
                   </div>
                   <div class="card-dan-p">
                     <p>Editar Chamado</p>
                   </div>
                 </div>
               </a>
+              <a id="link" href="./autorizar_usuario.php">
+                <div class="card-dan card-header">
+                  <div class="card-dan-img">
+                    <img src="./img/autorizacao.png" width="70" height="70">
+                  </div>
+                  <div class="card-dan-p">
+                    <p>Autorizar</p>
+                  </div>
+                </div>
+              </a>
+              <a id="link" href="./usuarios.php">
+                <div class="card-dan card-header">
+                  <div class="card-dan-img">
+                    <img src="./img/usuarios.png" width="70" height="70">
+                  </div>
+                  <div class="card-dan-p">
+                    <p>Usuários</p>
+                  </div>
+                </div>
+              </a>
+              <a id="link" href="./editar_chamado.php">
+                <div class="card-dan card-header">
+                  <div class="card-dan-img">
+                    <img src="./img/relatorio.png" width="70" height="70">
+                  </div>
+                  <div class="card-dan-p">
+                    <p>Relatórios</p>
+                  </div>
+                </div>
+              </a>
+              <?php } ?>
           </div>
         </div>
       </div>
@@ -70,6 +106,11 @@
     <?php } if (isset($_GET['erro']) && $_GET['erro'] === 'erro') { ?>
       <script>
           alert('Erro ao cadastrar!');
+          window.history.replaceState(null, null, window.location.pathname);
+      </script>
+    <?php } if (isset($_GET['acessonegado']) && $_GET['acessonegado']) {?>
+      <script>
+          alert('Acesso Negado!');
           window.history.replaceState(null, null, window.location.pathname);
       </script>
     <?php } ?>
