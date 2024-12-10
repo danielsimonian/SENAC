@@ -1,0 +1,2 @@
+password'; delete from tb_usuarios where 'a'='a
+        -> começa aqui
