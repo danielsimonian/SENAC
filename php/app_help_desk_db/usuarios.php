@@ -1,7 +1,8 @@
 <?php
   require_once "validador_acesso.php";
   require_once "conexao.php";
-  $chamados = mysqli_query($link, "SELECT * FROM TB_USER WHERE `perfil` = 'administrador'");
+
+  $chamados = mysqli_query($link, "SELECT * FROM TB_USER WHERE `perfil` != 'adm'"); //quem é adm não aparece!
 ?>
 
 <html lang="pt-BR">
@@ -35,9 +36,7 @@
             </tr>
           </thead>
           <tbody>
-            <?php          
-           
-
+            <?php
               foreach($chamados as $chamado){ ?>
               <tr>
                   <!-- Nos 3 itens abaixo aplicamos os valores respectivos em cada um deles -->
@@ -46,6 +45,7 @@
                   <td><?php echo $chamado['email'] ?></td>
                   <td><?php echo $chamado['perfil'] ?></td>
                   <td class="acao">
+
                     <div>
                       <a href="usuarios_edit.php?id_user=<?php echo $chamado['id_user']?>"><input type="button" value="Editar"></a>
                     </div>
@@ -54,8 +54,7 @@
                     </div>
                   </td>
               </tr>
-
-              <?php } ?>
+              <?php } ?> 
               
           </tbody>
         </table>

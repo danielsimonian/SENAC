@@ -41,29 +41,40 @@
               Consulta de chamado
             </div>
             
+
+            
             <div class="card-body">
               
             <!-- Rodamos um foreach passando por todos os chamados -->
               <?php 
                 $userPerfil = $_SESSION['perfil'];
                 $userId = $_SESSION['id_user'];
-              
-              foreach($chamados as $chamado){ ?>
 
+                
+
+              foreach($chamados as $chamado){ 
+                
+                if ($userPerfil != 'adm' && $chamado['id_user'] != $userId) {
+                  continue;
+              }
+                
+                ?>
+                
               <div class="card mb-3 bg-light">
                 <div class="card-body">
 
                   <!-- Nos 3 itens abaixo aplicamos os valores respectivos em cada um deles -->
                   <h5 class="card-title"><?php echo $chamado['titulo'] ?></h5>
                   <h6 class="card-subtitle mb-2 text-muted"><?php echo $chamado['categoria'] ?></h6>
-                  <p class="card-text"><?php echo $chamado['descricao'] ?></p>   
-                  <?php if ($userPerfil == 'administrador') { ?>
+                  <p class="card-text"><?php echo $chamado['descricao'] ?></p>
+                  <?php if ($userPerfil == 'adm') { ?>
                     <p class="card-text"><strong>Nome do usuário: </strong><?php echo $chamado['nome'] ?></p>
                     <p class="card-text"><strong>ID do usuário: </strong><?php echo $chamado['id_user'] ?></p>
                     <?php } ?>            
                 </div>
               </div>
               <?php } ?>
+            
               
               <div class="row mt-5">
                 <div class="col-6">

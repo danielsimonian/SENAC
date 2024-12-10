@@ -3,7 +3,7 @@
   require_once "conexao.php";
   require_once "validador_user.php";
 
-  $chamados = mysqli_query($link, "SELECT TB_CHAMADOS.*, TB_USER.nome
+  $chamados = mysqli_query($link, "SELECT TB_CHAMADOS.*, TB_USER.*
   FROM TB_CHAMADOS
   INNER JOIN TB_USER ON TB_CHAMADOS.id_user = TB_USER.id_user");
 ?>
@@ -35,7 +35,9 @@
               <th>Título</th>
               <th>Categoria</th>
               <th>Descrição</th>
-              <th>Usuário</th>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Perfil</th>
               <th>Ação</th>
             </tr>
           </thead>
@@ -51,6 +53,8 @@
                   <td><?php echo $chamado['categoria'] ?></td>
                   <td><?php echo $chamado['descricao'] ?></td>
                   <td><?php echo $chamado['id_user'] ?></td>
+                  <td><?php echo $chamado['nome'] ?></td>
+                  <td><?php echo $chamado['perfil'] ?></td>
                   <td class="acao">
                 <div>
                   <a href="editar_chamado_edit.php?id_chamado=<?php echo $chamado['id_chamado']?>"><input type="button" value="Editar"></a>
