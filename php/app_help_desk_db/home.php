@@ -83,7 +83,7 @@
                   </div>
                 </div>
               </a>
-              <a id="link" href="./editar_chamado.php">
+              <a id="link" href="./relatorios.php">
                 <div class="card-dan card-header">
                   <div class="card-dan-img">
                     <img src="./img/relatorio.png" width="70" height="70">
@@ -102,17 +102,21 @@
       <script>
           alert('Cadastrado com sucesso!');
           window.history.replaceState(null, null, window.location.pathname);
-      </script>
-    <?php } if (isset($_GET['erro']) && $_GET['erro'] === 'erro') { ?>
+      </script> 
+    <?php } ?>
+    
+    <?php if (isset($_GET['erro']) && $_GET['erro'] === 'erro') { ?>
       <script>
           alert('Erro ao cadastrar!');
           window.history.replaceState(null, null, window.location.pathname);
       </script>
-    <?php } if (isset($_GET['acessonegado']) && $_GET['acessonegado']) {?>
+    <?php } ?>
+
+    <?php if (isset($_GET['acessonegado']) && $_GET['acessonegado'] === 'negado') { ?>   
       <script>
-          alert('Acesso Negado!');
-          window.history.replaceState(null, null, window.location.pathname);
-      </script>
+          alert('Cadastrado com sucesso!');
+         // window.history.replaceState(null, null, window.location.pathname);
+      </script> 
     <?php } ?>
   </body>
 </html>

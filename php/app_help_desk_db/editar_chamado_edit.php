@@ -11,8 +11,9 @@
         $titulo = $_POST['titulo'];
         $categoria = $_POST['categoria'];
         $descricao = $_POST['descricao'];
+        $status = $_POST['status'];
 
-        mysqli_query ($link, "UPDATE TB_CHAMADOS SET `titulo` = '$titulo', `categoria` = '$categoria', `descricao` = '$descricao' WHERE ID_CHAMADO = {$_GET['id_chamado']}"); 
+        mysqli_query ($link, "UPDATE TB_CHAMADOS SET `titulo` = '$titulo', `categoria` = '$categoria', `descricao` = '$descricao', `status` = '$status' WHERE ID_CHAMADO = {$_GET['id_chamado']}"); 
         header ('Location: editar_chamado.php?cadastro=sucesso');
     
       }
@@ -73,9 +74,20 @@
                       </select>
                     </div>
                     
+                    
                     <div class="form-group">
                       <label>Descrição</label>
                       <textarea name="descricao" class="form-control" rows="3" value=""><?php print trim($row->descricao);?></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Status</label>
+                      <select name="status" class="form-control">
+                        <option value="<?php print trim($row->status);?>"><?php print trim($row->status);?></option>
+                        <option>Aberto</option>
+                        <option>Em Andamento</option>
+                        <option>Finalizado</option>                       
+                      </select>
                     </div>
 
     

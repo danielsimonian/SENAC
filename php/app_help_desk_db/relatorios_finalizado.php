@@ -1,8 +1,12 @@
 <?php
   require_once "validador_acesso.php";
   require_once "conexao.php";
+  require_once "validador_user.php";
 
-  $chamados = mysqli_query($link, "SELECT * FROM TB_USER"); //quem é adm não aparece!
+  $chamados = mysqli_query($link, "SELECT TB_CHAMADOS.*, TB_USER.* 
+  FROM TB_CHAMADOS
+  INNER JOIN TB_USER ON TB_CHAMADOS.id_user = TB_USER.id_user
+  WHERE TB_CHAMADOS.status = 'Finalizado'");
 ?>
 
 <html lang="pt-BR">
@@ -20,7 +24,7 @@
         <img src="./img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
-      <a href="home.php"><button class="btn btn-dark">Voltar</button></a>
+      <a href="relatorios.php"><button class="btn btn-dark">Voltar</button></a>
     </nav>
 
     <main>
@@ -29,48 +33,51 @@
           <thead class="thead-light">
             <tr>
               <th>ID</th>
-              <th>Usuário</th>
-              <th>E-mail</th>
+              <th>Status</th>
+              <th>Título</th>
+              <th>Categoria</th>
+              <th>Descrição</th>
+              <th>ID</th>
+              <th>Nome</th>
               <th>Perfil</th>
-              <th>Ação</th>
             </tr>
           </thead>
           <tbody>
-            <?php
+            <?php          
+
               foreach($chamados as $chamado){ ?>
+
               <tr>
                   <!-- Nos 3 itens abaixo aplicamos os valores respectivos em cada um deles -->
+                  <td><?php echo $chamado['id_chamado'] ?></td>
+                  <td class=""><?php echo $chamado['status'] ?></td>
+                  <td><?php echo $chamado['titulo'] ?></td>
+                  <td><?php echo $chamado['categoria'] ?></td>
+                  <td><?php echo $chamado['descricao'] ?></td>
                   <td><?php echo $chamado['id_user'] ?></td>
                   <td><?php echo $chamado['nome'] ?></td>
-                  <td><?php echo $chamado['email'] ?></td>
                   <td><?php echo $chamado['perfil'] ?></td>
-                  <td class="acao">
-
-                    <div>
-                      <a href="usuarios_edit.php?id_user=<?php echo $chamado['id_user']?>"><input type="button" value="Editar"></a>
-                    </div>
-                    <div>
-                    <a href="usuarios_excluir.php?id_user=<?php echo $chamado['id_user']?>"><input type="button" value="Excluir"></a>
-                    </div>
-                  </td>
+                  
               </tr>
-              <?php } ?> 
+              <?php } ?>
               
+              
+
           </tbody>
         </table>
       </session>
     </main>
-    <?php if (isset($_GET['cadastro']) && $_GET['cadastro'] === 'sucesso') {?>
+    <?php if (isset($_GET['cadastro']) && $_GET['cadastro'] === 'sucesso') { ?>   
       <script>
-          alert('Usuário atualizado com sucesso!');
+          alert('Edição realizada com sucesso!');
           window.history.replaceState(null, null, window.location.pathname);
       </script>
-    <?php } if (isset($_GET['exclui']) && $_GET['exclui'] === 'sucesso') {?>
+    <?php } if (isset($_GET['exclui']) && $_GET['exclui'] === 'sucesso') { ?>
       <script>
-          alert('Usuário excluido com sucesso!');
+          alert('Cadastro excluído com sucesso!');
           window.history.replaceState(null, null, window.location.pathname);
       </script>
     <?php } ?>
-    
+    <script src="./js/script.js"></script>
   </body>
 </html>

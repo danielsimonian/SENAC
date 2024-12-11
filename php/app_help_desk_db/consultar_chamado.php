@@ -67,6 +67,7 @@
                   <h5 class="card-title"><?php echo $chamado['titulo'] ?></h5>
                   <h6 class="card-subtitle mb-2 text-muted"><?php echo $chamado['categoria'] ?></h6>
                   <p class="card-text"><?php echo $chamado['descricao'] ?></p>
+                  <p class="card-text"><strong>Status: </strong><?php echo $chamado['status'] ?></p>
                   <?php if ($userPerfil == 'adm') { ?>
                     <p class="card-text"><strong>Nome do usuário: </strong><?php echo $chamado['nome'] ?></p>
                     <p class="card-text"><strong>ID do usuário: </strong><?php echo $chamado['id_user'] ?></p>

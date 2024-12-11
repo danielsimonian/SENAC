@@ -32,6 +32,7 @@
           <thead class="thead-light">
             <tr>
               <th>ID</th>
+              <th>Status</th>
               <th>Título</th>
               <th>Categoria</th>
               <th>Descrição</th>
@@ -49,6 +50,18 @@
               <tr>
                   <!-- Nos 3 itens abaixo aplicamos os valores respectivos em cada um deles -->
                   <td><?php echo $chamado['id_chamado'] ?></td>
+                  <td   class="
+                      <?php
+                        // Verifique o status e aplique a classe correspondente
+                        if ($chamado['status'] === 'Aberto') {
+                          echo 'status-aberto';
+                        } elseif ($chamado['status'] === 'Finalizado') {
+                          echo 'status-finalizado';
+                        } elseif ($chamado['status'] === 'Em Andamento') {
+                          echo 'status-andamento';
+                        }
+                      ?>
+                    "><?php echo $chamado['status'] ?></td>
                   <td><?php echo $chamado['titulo'] ?></td>
                   <td><?php echo $chamado['categoria'] ?></td>
                   <td><?php echo $chamado['descricao'] ?></td>
@@ -81,6 +94,6 @@
           window.history.replaceState(null, null, window.location.pathname);
       </script>
     <?php } ?>
-    
+    <script src="./js/script.js"></script>
   </body>
 </html>

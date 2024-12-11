@@ -77,3 +77,16 @@
   flex-direction: row;
   gap: 5px;
 }
+
+/* Definir as cores para cada status */
+.status-aberto {
+  background-color: rgb(235, 249, 253);
+}
+
+.status-finalizado {
+  background-color: rgb(214, 255, 214);
+}
+
+.status-andamento {
+  background-color: lightyellow;
+}

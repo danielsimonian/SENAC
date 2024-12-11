@@ -48,7 +48,6 @@
                     <div class="form-group">
                       <label>Categoria</label>
                       <select name="categoria" class="form-control">
-                        <option>Criação Usuário</option>
                         <option>Impressora</option>
                         <option>Hardware</option>
                         <option>Software</option>
@@ -58,7 +57,7 @@
                     
                     <div class="form-group">
                       <label>Descrição</label>
-                      <textarea name="descricao" class="form-control" rows="3"></textarea>
+                      <textarea maxlength="50" name="descricao" class="form-control" rows="3"></textarea>
                     </div>
 
     
