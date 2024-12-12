@@ -1,6 +1,6 @@
 <?php
   require_once "validador_acesso.php";
-  require_once "conexao.php";
+  require "app_help_desk_seguranca/conexao.php";
 
   $sql = "SELECT * FROM tb_user WHERE ID_user = {$_GET['id_user']}";
   $res = $link->query($sql);
@@ -73,7 +73,13 @@
 
                     <div class="form-group">
                       <label>Perfil</label>
-                      <input name="perfil" type="text" class="form-control" value="<?php print trim($row->perfil);?>">
+                      <div class="form-group">
+                        <select class="form-control" name="perfil" id="" required>
+                          <option disabled selected value="" style="text-align: center;">Selecione o nível</option>
+                          <option name="usuario" value="usuario">Usuário</option>
+                          <option name="administrador" value="administrador">Administrador</option>
+                        </select>
+                      </div>
                     </div>
 
     

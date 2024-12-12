@@ -19,7 +19,7 @@
         <img src="./img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
-      <a href="logoff.php"><button class="btn btn-dark">Sair</button></a>
+      <a href="home.php"><button class="btn btn-dark">Voltar</button></a>
     </nav>
 
     <div class="container">    

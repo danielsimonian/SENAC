@@ -32,6 +32,7 @@ CREATE TABLE `tb_chamados` (
   `titulo` varchar(90) NOT NULL,
   `categoria` varchar(90) NOT NULL,
   `descricao` varchar(90) NOT NULL,
+  `status` varchar(90) NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -39,8 +40,8 @@ CREATE TABLE `tb_chamados` (
 -- Extraindo dados da tabela `tb_chamados`
 --
 
-INSERT INTO `tb_chamados` (`id_chamado`, `titulo`, `categoria`, `descricao`, `id_user`) VALUES
-(43, 'Socorro', 'Impressora', 'aeaeaea', 24);
+INSERT INTO `tb_chamados` (`id_chamado`, `titulo`, `categoria`, `descricao`, `status`, `id_user`) VALUES
+(1, 'Socorro', 'Impressora', 'aeaeaea', 'Em Andamento', 1);
 
 -- --------------------------------------------------------
 
@@ -61,9 +62,9 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id_user`, `nome`, `email`, `senha`, `perfil`) VALUES
-(24, 'Daniel Simonian', 'danielsimonian@gmail.com', '202cb962ac59075b964b07152d234b70', 'adm'),
-(29, 'Guigui', 'guigui@gmail.com', '202cb962ac59075b964b07152d234b70', 'administrador'),
-(30, 'Fefe', 'fefe@gmail.com', '202cb962ac59075b964b07152d234b70', 'administrador');
+(1, 'Daniel Simonian', 'danielsimonian@gmail.com', '202cb962ac59075b964b07152d234b70', 'adm'),
+(2, 'Guigui', 'guigui@gmail.com', '202cb962ac59075b964b07152d234b70', 'administrador'),
+(3, 'Fefe', 'fefe@gmail.com', '202cb962ac59075b964b07152d234b70', 'usuario');
 
 --
 -- Índices para tabelas despejadas

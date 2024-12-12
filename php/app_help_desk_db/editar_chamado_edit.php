@@ -1,6 +1,7 @@
 <?php
   require_once "validador_acesso.php";
-  require_once "conexao.php";
+  require_once "app_help_desk_seguranca/conexao.php";
+  require_once "validador_user.php";
 
   $sql = "SELECT * FROM tb_chamados WHERE ID_CHAMADO = {$_GET['id_chamado']}";
   $res = $link->query($sql);

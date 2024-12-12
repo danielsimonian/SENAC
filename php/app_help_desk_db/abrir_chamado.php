@@ -1,5 +1,6 @@
 <?php
   require_once "validador_acesso.php";
+  require "app_help_desk_seguranca/conexao.php";
 ?>
 
 <html lang="pt-BR">
@@ -60,8 +61,6 @@
                       <textarea maxlength="50" name="descricao" class="form-control" rows="3"></textarea>
                     </div>
 
-    
-
                     <div class="row mt-5">
                       <div class="col-6">
                         <a href="./home.php" class="btn btn-lg btn-warning btn-block">Voltar</a>
@@ -78,5 +77,11 @@
           </div>
         </div>
     </div>
+    <?php if (isset($_GET['cadastro']) && $_GET['cadastro'] === 'fail') { ?>   
+      <script>
+          alert('Não Cadastrado!');
+          window.history.replaceState(null, null, window.location.pathname);
+      </script> 
+    <?php } ?>
   </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
   require_once "validador_acesso.php";
-  require_once "conexao.php";
+  require "app_help_desk_seguranca/conexao.php";
   require_once "validador_user.php";
 
   $chamados = mysqli_query($link, "SELECT TB_CHAMADOS.*, TB_USER.* 

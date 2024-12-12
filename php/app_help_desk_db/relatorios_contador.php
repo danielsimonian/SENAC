@@ -1,5 +1,5 @@
 <?php
-require "conexao.php";
+require "app_help_desk_seguranca/conexao.php";
 
 $totalAberto = 0;
 $totalAndamento = 0;

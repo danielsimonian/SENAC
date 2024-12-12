@@ -114,8 +114,8 @@
 
     <?php if (isset($_GET['acessonegado']) && $_GET['acessonegado'] === 'negado') { ?>   
       <script>
-          alert('Cadastrado com sucesso!');
-         // window.history.replaceState(null, null, window.location.pathname);
+          alert('Acesso Negado!');
+          window.history.replaceState(null, null, window.location.pathname);
       </script> 
     <?php } ?>
   </body>
