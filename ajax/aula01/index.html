@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Requisições</title>
+</head>
+<body>
+    <nav class="menu">
+        <div>
+            <h3>Requisições sincronas e assincronas</h3>
+        </div>
+    </nav>
+        <div class="botoes">
+            <a href="#" onclick="requisicao('pagina_conteudo_1.php')">Página 1</a>
+            <a href="#" onclick="requisicao('pagina_conteudo_2.php')">Página 2</a>
+            <a href="#" onclick="requisicao('pagina_conteudo_5.html')">Página 3</a>
+        </div>
+
+        <div class="principal" id="divloading">
+            <div class="conteudo" id="erro404">
+
+            </div>
+        </div>
+
+    <script>
+        function requisicao(url) {
+            document.getElementById('erro404').innerHTML = "";
+            let imgloading = document.createElement('img');
+            imgloading.src = 'loading.gif';
+            imgloading.id = 'loading';
+
+            document.getElementById('divloading').appendChild(imgloading);
+
+            let ajax = new XMLHttpRequest();
+            ajax.open('GET', url);
+
+            ajax.onreadystatechange = function() {
+                if (ajax.readyState == 4) {
+                    if (ajax.status == 200) {
+                        document.getElementById('erro404').innerHTML = ajax.responseText
+                    }
+                    if (ajax.status == 404) {
+                        document.getElementById('erro404').innerHTML = `
+                        <img class="erro404" src="erro404.png">
+                        
+                        `
+                    }
+                    document.getElementById('loading').remove();
+                } 
+                    
+            }
+
+            ajax.send();
+        }
+    </script>
+</body>
+</html>
