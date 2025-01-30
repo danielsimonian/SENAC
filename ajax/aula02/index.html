@@ -6,11 +6,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Netflix</title>
 </head>
-<body>
+<body class="bg-dark">
     <header>
-        <nav class="navbar bg-body-tertiary">
+        <nav class="navbar bg-dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand text-light" href="#">
                 <img src="./img/logo-netflix.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                 Netflix
               </a>
@@ -21,6 +21,9 @@
         <div id="erro404" class="row m-4">
             <div class="container-sm">
                 <input  class="btn btn-success" type="button" value="Lista Filmes" onclick="getFilmes()">
+            </div>
+            <div class="text-light" id="lista">
+
             </div>
         </div>
     </main>
@@ -46,12 +49,48 @@
                         //console.log(domFilmes);
 
                         let jsonFilmes = xmlToJson(domFilmes);
-                        console.log(jsonFilmes);
+                        //console.log(jsonFilmes);
+
+                        //buscar os filmes na lista
+                        for(let i in jsonFilmes['filmes']['filme']){
+                            let item = jsonFilmes['filmes']['filme'][i];
+                            console.log(item);
+
+                            let divRow = document.createElement('div');
+                            divRow.className = 'row';
+                            let divCol = document.createElement('div');
+                            divCol.className = 'col mt-3';
+
+                            let p1 = document.createElement('p');
+                            p1.innerHTML = '<p><strong>Título: </strong>' + item['titulo']['#text'] + '</p>';
+                            let p2 = document.createElement('p');
+                            p2.innerHTML = '<p><strong>Resumo: </strong>' + item['resumo']['#text'] + '</p>';
+                            let p3 = document.createElement('p');
+                            p3.innerHTML = '<p><strong>Gênero: </strong></p>';
+                            let p4 = document.createElement('p');
+                            p4.innerHTML = '<p><strong>Elenco: </strong></p>';
+                            let p5 = document.createElement('p');
+                            p5.innerHTML = '<p><strong>Data de lançamento: </strong></p>';
+                            let hr = document.createElement('hr');
+
+                            //criar hierarquia
+                            divRow.appendChild(divCol);
+                            divCol.appendChild(p1);
+                            divCol.appendChild(p2);
+                            divCol.appendChild(p3);
+                            divCol.appendChild(p4);
+                            divCol.appendChild(p5);
+                            divCol.appendChild(hr);
+
+                            document.getElementById('lista').appendChild(divRow);
+                        }
+
+
                     }
                     //404
                     if(xmlHttp.status == 404) {
                         document.getElementById('erro404').innerHTML = `
-                        <div class="col-12">
+                        <div class="row">
                             <img class="col-12" src="./img/erro404.png">
                         </div>
                         `
@@ -59,7 +98,7 @@
                 }
             }
 
-            console.log(xmlHttp);
+            //console.log(xmlHttp);
             xmlHttp.send();
         }
     </script>
