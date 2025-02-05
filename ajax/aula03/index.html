@@ -13,7 +13,7 @@
     <form>
       <div class="mb-3">
         <label for="cep" class="form-label">Informe o CEP</label>
-        <input type="text" class="form-control" id="cep" maxlength="9" placeholder="Ex: 12345-678" required>
+        <input type="text" class="form-control" id="cep" maxlength="9" placeholder="Ex: 12345-678" onblur="getEndereco(this.value)" required>
       </div>
     </form>
 
@@ -22,7 +22,7 @@
       <div class="address-info">
         <div class="mb-3">
           <label for="endereco" class="form-label">Endereço</label>
-          <input type="text" class="form-control" id="endereco" value="Rua Exemplo, 123" readonly>
+          <input type="text" class="form-control" id="endereco" value="" readonly>
         </div>
         <div class="mb-3">
           <label for="bairro" class="form-label">Bairro</label>
@@ -38,8 +38,47 @@
         </div>
       </div>
     </div>
-  </div>
+    <div id="naoEncontrado">
 
+    </div>
+  </div>
+  <script>
+    function getEndereco(cep) {
+      //console.log(cep);
+      let url = 'https://viacep.com.br/ws/' + cep + '/json/';
+      //console.log(url);
+      let xmlHttp = new XMLHttpRequest();
+      xmlHttp.open('GET', url); //abra a url pelo GET
+
+      xmlHttp.onreadystatechange = () => {
+        if (xmlHttp.readyState == 4) {
+          console.log(xmlHttp); //descobri o status 0 aqui!
+          if (xmlHttp.status == 200) {
+            let dadosJSONText = xmlHttp.responseText;
+            //console.log(dadosJSONText);
+
+            let dadosJSONObj = JSON.parse(dadosJSONText); //transformando o texto em objeto!
+            //console.log(dadosJSONObj);
+
+            document.getElementById('endereco').value = dadosJSONObj.logradouro;
+            document.getElementById('bairro').value = dadosJSONObj.bairro;
+            document.getElementById('cidade').value = dadosJSONObj.localidade;
+            document.getElementById('estado').value = dadosJSONObj.estado;
+            document.getElementById('naoEncontrado').innerHTML = "";
+
+
+          } if (xmlHttp.status == 0) { //descobri abrido o objeto
+              document.getElementById('naoEncontrado').innerHTML = 
+              `
+                <p>CEP não encontrado!</p>
+              `
+            }
+        } 
+      }
+
+      xmlHttp.send();
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
