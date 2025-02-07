@@ -1,5 +1,7 @@
 <?php
-// Definindo a classe Personagem
+// Definindo o namespace para a classe Personagem
+namespace Jogo\Personagem;
+
 class Personagem {
     private $nome;
     private $imagem;
@@ -42,12 +44,15 @@ class Personagem {
     }
 }
 
-// Definindo a classe Jogo
+// Definindo o namespace para a classe Jogo
+namespace Jogo\Jogo;
+
+use Jogo\Personagem\Personagem;
+
 class Jogo {
     private $personagens;
 
     public function __construct() {
-        // Inicializando os personagens com seus atributos
         $this->personagens = [
             'guerreiro' => new Personagem(
                 'Guerreiro',
@@ -123,13 +128,6 @@ class Jogo {
         return null;
     }
 }
-
-$jogo = new Jogo();
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $personagemEscolhido = $_POST['personagem'];
-    $carta = $jogo->exibirCarta($personagemEscolhido);
-}
 ?>
 
 <!DOCTYPE html>
@@ -202,6 +200,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </select>
         <input type="submit" value="Gerar Carta">
     </form>
+
+    <?php
+    // Importando a classe Jogo usando o namespace
+    use Jogo\Jogo\Jogo;
+
+    $jogo = new Jogo();
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $personagemEscolhido = $_POST['personagem'];
+        $carta = $jogo->exibirCarta($personagemEscolhido);
+    }
+    ?>
 
     <?php if (isset($carta)): ?>
         <div class="card">
