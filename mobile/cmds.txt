@@ -1,0 +1,2 @@
+// npx create-expo-app@latest primeiroapp -t blank
+// npm run android
