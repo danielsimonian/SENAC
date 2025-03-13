@@ -1,2 +1,5 @@
 // npx create-expo-app@latest primeiroapp -t blank
 // npm run android
+
+// npm install @react-native-community/slider --save (instalar o slider)
+npm install @react-native-picker/picker --save (instalar o picker)
